@@ -20,5 +20,5 @@ position = Vector2( 180, 182 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="AnimatedObjects"]
-position = Vector2( 180, 320 )
+anchor_mode = 0
 current = true
