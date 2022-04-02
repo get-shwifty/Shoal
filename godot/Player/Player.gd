@@ -1,4 +1,4 @@
-extends Position2D
+extends Node2D
 
 enum Pattern {
 	CIRCLE,
@@ -7,7 +7,7 @@ enum Pattern {
 	VERTICAL
 }
 
-var current_pattern = Pattern.TWO_CIRCLES
+var current_pattern = Pattern.CIRCLE
 
 onready var fishes = $Fishes
 onready var target2CirclesLeft = $Target2CirclesLeft
@@ -24,9 +24,6 @@ func _physics_process(delta):
 				set_target_pos_circle(children)
 			Pattern.TWO_CIRCLES:
 				set_target_pos_two_circles(children)
-
-	position.y += 60 * delta
-	position.x = 200 + cos(position.y / 20) * 30
 
 func set_target_pos_circle(children):
 	for child in children:
