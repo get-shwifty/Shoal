@@ -4,7 +4,7 @@
 [ext_resource path="res://Player/Fish.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 7.0
+radius = 4.0
 
 [node name="Fish" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -12,6 +12,8 @@ script = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.125, 0.25 )
+[node name="Pivot" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Pivot"]
+scale = Vector2( 0.07, 0.15 )
 texture = ExtResource( 1 )
