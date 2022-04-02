@@ -46,7 +46,7 @@ position = Vector2( 18, -5 )
 position = Vector2( 11, 19 )
 
 [node name="Target2CirclesLeft" type="Position2D" parent="."]
-position = Vector2( -70, 0 )
+position = Vector2( -30, 0 )
 
 [node name="Sprite" type="Sprite" parent="Target2CirclesLeft"]
 visible = false
@@ -55,7 +55,7 @@ scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
 
 [node name="Target2CirclesRight" type="Position2D" parent="."]
-position = Vector2( 70, 0 )
+position = Vector2( 30, 0 )
 
 [node name="Sprite2" type="Sprite" parent="Target2CirclesRight"]
 visible = false

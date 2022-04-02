@@ -1,6 +1,6 @@
 extends Position2D
 
-var SPEED = 300.0
+var SPEED = 100.0
 var velocity = Vector2.ZERO
 var screen_size
 
