@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Position2D
 
 var SPEED = 300.0
 var velocity = Vector2.ZERO
@@ -9,15 +9,14 @@ func _ready():
 
 func _physics_process(delta):
 	var direction = get_direction()
-	var sprite_size = $Sprite.texture.get_size() * $Sprite.scale
 	
 	velocity.x = SPEED * direction.x
 	velocity.y = SPEED * direction.y
-	velocity = move_and_slide(velocity)
+	translate(velocity * delta)
 	
 	# Clamp : Pour éviter que le personnage sorte de l'écran
 	# Sprite_size / 2 : Pour éviter qu'il soit découper en deux
-	position.x = clamp(position.x, (sprite_size.x/2), screen_size.x - (sprite_size.x/2))
+	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
 	
 func get_direction() -> Vector2:
