@@ -5,16 +5,22 @@ export (Array, PackedScene) var scenes
 var random_scene = RandomNumberGenerator.new()
 var selected_scene_index = 0
 var current_position = Vector2.ZERO
+var chunks
+
+onready var camera = get_tree().get_root().get_node("Main/AnimatedObjects")
 
 func _ready():
 	add_chunk()
 	add_chunk()
-	add_chunk()
 	pass
 
-func _on_Timer_timeout():
-	add_chunk()
+func _process(delta):
+	chunks = self.get_children()
 	
+	if(chunks[chunks.size()-2].global_position.y > camera.global_position.y):
+		add_chunk()
+		drop_chunk()
+
 func add_chunk():
 	random_scene.randomize()
 	selected_scene_index = random_scene.randi_range(0,scenes.size()-1)
@@ -25,3 +31,6 @@ func add_chunk():
 	
 	add_child(new_scene)
 	
+func drop_chunk():
+	self.remove_child(chunks[0])
+
