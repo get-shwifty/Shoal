@@ -7,8 +7,3 @@
 [node name="Spawner" type="Node2D"]
 script = ExtResource( 1 )
 scenes = [ ExtResource( 3 ), ExtResource( 2 ) ]
-
-[node name="Timer" type="Timer" parent="."]
-autostart = true
-
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
