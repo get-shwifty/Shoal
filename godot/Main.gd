@@ -1,6 +1,6 @@
 extends Node2D
 
-export (int) var CAMERA_SPEED = 50
+export (int) var CAMERA_SPEED = 80
 
 func _ready():
 	$AnimatedObjects/Player.connect("end_game", self, "_game_over")

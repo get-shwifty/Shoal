@@ -13,7 +13,7 @@ var direction = Vector2.ZERO
 var velocity = Vector2.ZERO
 var current_pattern = Pattern.CIRCLE
 
-const SPEED = 100
+const SPEED = 120
 
 enum Pattern {
 	CIRCLE,
