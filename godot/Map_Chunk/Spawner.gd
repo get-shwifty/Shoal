@@ -12,12 +12,13 @@ onready var camera = get_tree().get_root().get_node("Main/AnimatedObjects")
 func _ready():
 	add_chunk()
 	add_chunk()
+	add_chunk()
 	pass
 
 func _process(delta):
 	chunks = self.get_children()
 	
-	if(chunks[chunks.size()-2].global_position.y > camera.global_position.y):
+	if(chunks[chunks.size()-1].global_position.y > camera.global_position.y):
 		add_chunk()
 		drop_chunk()
 
