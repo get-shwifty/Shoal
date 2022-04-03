@@ -22,7 +22,7 @@ func _process(delta):
 		add_chunk()
 
 func add_chunk():
-	selected_scene_index = random_scene.randi_range(4, scenes.size()-1)
+	selected_scene_index = random_scene.randi_range(0, scenes.size()-1)
 	var new_scene = scenes[selected_scene_index].instance()
 
 	current_position.y -= new_scene.get_chunck_height()
