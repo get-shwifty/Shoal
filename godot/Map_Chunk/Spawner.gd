@@ -10,6 +10,7 @@ var chunks
 onready var camera = get_tree().get_root().get_node("Main/AnimatedObjects")
 
 func _ready():
+	random_scene.randomize()
 	add_chunk()
 	add_chunk()
 	add_chunk()
@@ -23,8 +24,7 @@ func _process(delta):
 		drop_chunk()
 
 func add_chunk():
-	random_scene.randomize()
-	selected_scene_index = 2 #random_scene.randi_range(0,scenes.size()-1)
+	selected_scene_index = random_scene.randi_range(0, scenes.size()-1)
 	var new_scene = scenes[selected_scene_index].instance()
 
 	current_position.y -= new_scene.get_chunck_height()
