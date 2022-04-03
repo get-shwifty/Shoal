@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
+[ext_resource path="res://Assets/Decoration/predator.png" type="Texture" id=2]
 [ext_resource path="res://Obstacles/Rocks.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=4]
 
@@ -24,3 +25,7 @@ position = Vector2( 254, 124 )
 
 [node name="StaticBody2D4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 161, 292 )
+
+[node name="Predator" type="Sprite" parent="."]
+position = Vector2( 239, 52 )
+texture = ExtResource( 2 )
