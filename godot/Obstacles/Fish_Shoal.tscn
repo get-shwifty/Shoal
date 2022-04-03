@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Player/Fish.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Obstacles/Fish_Shoal.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 19.105
+
+[node name="Fish_Shoal" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Fishes" type="Node2D" parent="."]
+
+[node name="Fish" parent="Fishes" instance=ExtResource( 1 )]
+position = Vector2( -6, -4 )
+collision_layer = 4
+collision_mask = 7
+
+[node name="Fish2" parent="Fishes" instance=ExtResource( 1 )]
+position = Vector2( -12, 7 )
+collision_layer = 4
+collision_mask = 7
+
+[node name="Fish3" parent="Fishes" instance=ExtResource( 1 )]
+position = Vector2( 9, 7 )
+collision_layer = 4
+collision_mask = 7
+
+[node name="Fish4" parent="Fishes" instance=ExtResource( 1 )]
+position = Vector2( -9, -14 )
+collision_layer = 4
+collision_mask = 7
+
+[node name="Fish5" parent="Fishes" instance=ExtResource( 1 )]
+position = Vector2( 11, -9 )
+collision_layer = 4
+collision_mask = 7
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

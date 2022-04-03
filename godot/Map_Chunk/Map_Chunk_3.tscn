@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
+[ext_resource path="res://Obstacles/Fish_Shoal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Obstacles/Rocks.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=4]
 
@@ -18,3 +19,6 @@ position = Vector2( 162, 160 )
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 232, 231 )
+
+[node name="Fish_Shoal" parent="." instance=ExtResource( 2 )]
+position = Vector2( 186, 71 )
