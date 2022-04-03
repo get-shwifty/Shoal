@@ -1,5 +1,6 @@
 extends Node2D
 
+export (int) var CAMERA_SPEED = 30
 export (int) var NB_FISH_INIT = 12
 
 var distance = 0
