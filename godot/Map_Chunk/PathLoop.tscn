@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Obstacles/PathFollow2D.gd" type="Script" id=1]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( -33.6188, 0.353553, 33.6188, -0.353553, -64, -33, 0.207107, -26.5404, -0.207107, 26.5404, -24, 12, 30.0741, -0.5, -30.0741, 0.5, -64, 57, -0.896447, 31.9442, 0.896447, -31.9442, -106, 11, -32, -0.25, 32, 0.25, -64, -33 )
+}
+
+[node name="PathLoop" type="Path2D"]
+position = Vector2( 64, -12 )
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2( -64, -33 )
+rotation = 0.0137376
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}

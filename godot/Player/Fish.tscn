@@ -49,5 +49,4 @@ modulate = Color( 1, 0.196078, 1, 1 )
 position = Vector2( -1, 0 )
 frames = SubResource( 7 )
 animation = "swim"
-frame = 0
 playing = true
