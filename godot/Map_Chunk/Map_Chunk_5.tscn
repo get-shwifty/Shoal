@@ -28,11 +28,10 @@ position = Vector2( 254, 381 )
 curve = SubResource( 1 )
 
 [node name="Predator" parent="PathLoop/PathFollow2D" index="0" instance=ExtResource( 3 )]
-position = Vector2( 1.41493, 102.99 )
-rotation = -1.5708
+rotation = 1.5708
 
-[node name="Sprite" parent="PathLoop/PathFollow2D/Predator" index="0"]
-position = Vector2( 102.99, -1.41493 )
+[node name="AnimatedSprite" parent="PathLoop/PathFollow2D/Predator" index="0"]
+frame = 6
 
 [editable path="PathLoop"]
 [editable path="PathLoop/PathFollow2D/Predator"]
