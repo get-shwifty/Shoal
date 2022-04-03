@@ -13,7 +13,7 @@ onready var old_position = global_position
 var delta_pos = Vector2.ZERO
 
 func _ready():
-	$Pivot/Sprite.frame = int(rand_range(0, 5))
+	$Pivot/AnimatedSprite.frame = int(rand_range(0, 5))
 
 func _physics_process(delta):
 	delta_pos = global_position - old_position
