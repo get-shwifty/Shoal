@@ -8,10 +8,15 @@ enum Pattern {
 }
 
 var current_pattern = Pattern.CIRCLE
+var camera_position_init
 
 onready var fishes = $Fishes
 onready var target2CirclesLeft = $Target2CirclesLeft
 onready var target2CirclesRight = $Target2CirclesRight
+onready var camera = get_tree().get_root().get_node("Main/AnimatedObjects")
+
+func _ready():
+	camera_position_init = camera.global_position.y
 
 func _physics_process(_delta):
 	var children = fishes.get_children()
@@ -26,6 +31,9 @@ func _physics_process(_delta):
 				set_target_pos_two_circles(children)
 				if Input.is_action_just_pressed("change_formation"):
 					current_pattern = Pattern.CIRCLE
+	for fish in children:
+		if fish.global_position.y > (camera.global_position.y - camera_position_init):
+			fish.queue_free()
 
 func set_target_pos_circle(children):
 	for child in children:
