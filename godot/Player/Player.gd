@@ -3,6 +3,8 @@ extends Node2D
 onready var fishes = $Fishes
 onready var target2CirclesLeft = $Target2CirclesLeft
 onready var target2CirclesRight = $Target2CirclesRight
+onready var camera = get_tree().get_root().get_node("Main/AnimatedObjects")
+onready var camera_position_init = camera.global_position.y
 
 const SPEED = 100
 
@@ -14,12 +16,7 @@ enum Pattern {
 }
 
 var current_pattern = Pattern.CIRCLE
-onready var camera_position_init = camera.global_position.y
 
-onready var fishes = $Fishes
-onready var target2CirclesLeft = $Target2CirclesLeft
-onready var target2CirclesRight = $Target2CirclesRight
-onready var camera = get_tree().get_root().get_node("Main/AnimatedObjects")
 
 var direction = Vector2.ZERO
 var velocity = Vector2.ZERO
