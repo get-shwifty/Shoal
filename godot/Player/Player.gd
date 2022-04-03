@@ -1,5 +1,11 @@
 extends Node2D
 
+onready var fishes = $Fishes
+onready var target2CirclesLeft = $Target2CirclesLeft
+onready var target2CirclesRight = $Target2CirclesRight
+
+const SPEED = 100
+
 enum Pattern {
 	CIRCLE,
 	TWO_CIRCLES,
@@ -9,13 +15,22 @@ enum Pattern {
 
 var current_pattern = Pattern.CIRCLE
 
-onready var fishes = $Fishes
-onready var target2CirclesLeft = $Target2CirclesLeft
-onready var target2CirclesRight = $Target2CirclesRight
+var direction = Vector2.ZERO
+var velocity = Vector2.ZERO
+onready var screen_size = get_viewport_rect().size
 
-func _physics_process(_delta):
-	var children = fishes.get_children()
+func _physics_process(delta):
+	# Player
 	
+	direction = get_direction()
+	velocity = direction * SPEED
+	translate(velocity * delta)
+	position.x = clamp(position.x, 0, screen_size.x)
+	position.y = clamp(position.y, 0, screen_size.y)
+	
+	# Fishes
+	
+	var children = fishes.get_children()
 	if children.size() > 0:
 		match current_pattern:
 			Pattern.CIRCLE:
@@ -43,3 +58,11 @@ func set_target_pos_two_circles(children):
 			child.target_pos = target2CirclesLeft.position
 		else:
 			child.target_pos = target2CirclesRight.position
+
+# Target Player
+
+func get_direction() -> Vector2:
+	return Vector2(
+		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
+		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
+	).normalized()
