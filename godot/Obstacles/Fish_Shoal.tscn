@@ -13,18 +13,23 @@ script = ExtResource( 2 )
 
 [node name="Fish" parent="Fishes" instance=ExtResource( 1 )]
 position = Vector2( -5, -4 )
+collision_layer = 0
 
 [node name="Fish2" parent="Fishes" instance=ExtResource( 1 )]
 position = Vector2( -11, 7 )
+collision_layer = 0
 
 [node name="Fish3" parent="Fishes" instance=ExtResource( 1 )]
 position = Vector2( 10, 7 )
+collision_layer = 0
 
 [node name="Fish4" parent="Fishes" instance=ExtResource( 1 )]
 position = Vector2( -8, -14 )
+collision_layer = 0
 
 [node name="Fish5" parent="Fishes" instance=ExtResource( 1 )]
 position = Vector2( 12, -9 )
+collision_layer = 0
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

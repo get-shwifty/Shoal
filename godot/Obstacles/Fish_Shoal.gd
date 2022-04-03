@@ -1,7 +1,12 @@
 extends Node2D
 
-signal fishes_collected
-
 func _on_Area2D_body_entered(body):
-	emit_signal("fishes_collected")
+	call_deferred("add_fish",body)
+	print("Hello")
+
+func add_fish(body):
+	for child in $Fishes.get_children() :
+		$Fishes.remove_child(child)
+		child.set_collision_layer(2)
+		body.get_parent().add_child(child)
 	queue_free()
