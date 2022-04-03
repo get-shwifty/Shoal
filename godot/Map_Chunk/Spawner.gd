@@ -13,18 +13,16 @@ func _ready():
 	random_scene.randomize()
 	add_chunk()
 	add_chunk()
-	add_chunk()
-	pass
 
 func _process(delta):
 	chunks = self.get_children()
 	
-	if(chunks[chunks.size()-1].global_position.y > camera.global_position.y):
-		add_chunk()
+	if(chunks[chunks.size()-1].global_position.y > camera.global_position.y - 10):
 		drop_chunk()
+		add_chunk()
 
 func add_chunk():
-	selected_scene_index = random_scene.randi_range(0, scenes.size()-1)
+	selected_scene_index = random_scene.randi_range(4, scenes.size()-1)
 	var new_scene = scenes[selected_scene_index].instance()
 
 	current_position.y -= new_scene.get_chunck_height()
@@ -33,5 +31,5 @@ func add_chunk():
 	add_child(new_scene)
 	
 func drop_chunk():
-	self.remove_child(chunks[0])
+	chunks[0].queue_free()
 
