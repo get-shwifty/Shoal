@@ -1,10 +1,17 @@
 extends Node2D
 
+signal end_game
+
 onready var fishes = $Fishes
 onready var target2CirclesLeft = $Target2CirclesLeft
 onready var target2CirclesRight = $Target2CirclesRight
 onready var camera = get_tree().get_root().get_node("Main/AnimatedObjects")
 onready var camera_position_init = camera.global_position.y
+onready var screen_size = get_viewport_rect().size
+
+var direction = Vector2.ZERO
+var velocity = Vector2.ZERO
+var current_pattern = Pattern.CIRCLE
 
 const SPEED = 100
 
@@ -15,12 +22,6 @@ enum Pattern {
 	VERTICAL
 }
 
-var current_pattern = Pattern.CIRCLE
-
-
-var direction = Vector2.ZERO
-var velocity = Vector2.ZERO
-onready var screen_size = get_viewport_rect().size
 
 func _physics_process(delta):
 	# Player
@@ -48,6 +49,9 @@ func _physics_process(delta):
 	for fish in children:
 		if fish.global_position.y > (camera.global_position.y - camera_position_init):
 			fish.queue_free()
+	
+	if children.size() == 0 :
+		emit_signal("end_game")
 
 func set_target_pos_circle(children):
 	for child in children:
