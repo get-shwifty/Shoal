@@ -45,6 +45,11 @@ position = Vector2( 18, -5 )
 [node name="Fish12" parent="Fishes" instance=ExtResource( 2 )]
 position = Vector2( 11, 19 )
 
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 3 )
+
 [node name="Target2CirclesLeft" type="Position2D" parent="."]
 position = Vector2( -30, 0 )
 
@@ -62,3 +67,9 @@ visible = false
 modulate = Color( 0.647059, 0.0117647, 0.0117647, 1 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
+
+[node name="TargetHorizontalLeft" type="Position2D" parent="."]
+position = Vector2( -45, 0 )
+
+[node name="TargetHorizontalRight" type="Position2D" parent="."]
+position = Vector2( 45, 0 )
