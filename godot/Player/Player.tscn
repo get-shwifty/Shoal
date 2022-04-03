@@ -62,5 +62,3 @@ visible = false
 modulate = Color( 0.647059, 0.0117647, 0.0117647, 1 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
-
-[node name="WorldAlexis" type="Node2D" parent="."]
