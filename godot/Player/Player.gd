@@ -1,6 +1,7 @@
 extends Node2D
 
 signal end_game
+signal fish_added
 
 onready var fishes = $Fishes
 onready var target2CirclesLeft = $Target2CirclesLeft
@@ -37,6 +38,7 @@ func _physics_process(delta):
 	var children = fishes.get_children()
 	
 	if children.size() > 0:
+		emit_signal("nb_fishes",children.size())
 		match current_pattern:
 			Pattern.CIRCLE:
 				set_target_pos_circle(children)
@@ -77,3 +79,5 @@ func get_direction() -> Vector2:
 		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
 		Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 	).normalized()
+
+

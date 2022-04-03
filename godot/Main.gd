@@ -10,12 +10,14 @@ var max_of_fishes = NB_FISH_INIT
 
 func _ready():
 	$AnimatedObjects/Player.connect("end_game", self, "_game_over")
+	#$AnimatedObjects/Player.connect("nb_fishes", $AnimatedObjects/GUI, "_get_nb_fishes")
 
 func _physics_process(delta):
+	
 	$AnimatedObjects.position.y -= CAMERA_SPEED  * delta
 	
 	# Calcul des mesures pour le score
-	distance = floor(abs($AnimatedObjects/Player.global_position.y) / 40) 
+	distance = floor(abs($AnimatedObjects/Camera2D.global_position.y) / 40) 
 	number_of_fishes = ($AnimatedObjects/Player/Fishes.get_child_count())
 	if number_of_fishes > max_of_fishes:
 		max_of_fishes = number_of_fishes
