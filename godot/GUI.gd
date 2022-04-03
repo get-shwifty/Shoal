@@ -16,8 +16,8 @@ func _get_nb_fishes(nb_fish):
 		max_of_fishes = nb_fish
 
 func _on_Timer_timeout():
-	#$VBox/Distance/Distance.text = str(main_node.distance)
+	$VBox/Distance/Distance.text = str(main_node.distance)
 	$VBox/Max_Of_Fishes/Number_Fishes.text = str(max_of_fishes)
-	#$VBox/Score/Score.text = str(main_node.score)
+	$VBox/Score/Score.text = str(main_node.score)
 	pass
 	
