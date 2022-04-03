@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/got_ya2.ogg-8402b52b17c7855923eb47f4c682b07c.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/got_ya2.ogg"
+dest_files=[ "res://.import/got_ya2.ogg-8402b52b17c7855923eb47f4c682b07c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
