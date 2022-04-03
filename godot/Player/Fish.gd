@@ -1,4 +1,5 @@
 extends KinematicBody2D
+class_name Fish
 
 const SPEED = 80
 const ROTATION_SPEED = 5
