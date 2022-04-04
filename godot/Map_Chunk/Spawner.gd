@@ -6,6 +6,25 @@ var random_scene = RandomNumberGenerator.new()
 var selected_scene_index = 0
 var current_position = Vector2.ZERO
 
+export var starting_chunks = [
+	preload("res://Map_Chunk/Map_Chunk_1.tscn")
+]
+
+export var other_chunks = {
+	"easy":[
+		preload("res://Map_Chunk/Map_Chunk_1.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_2.tscn")
+	],
+	"medium": [
+		preload("res://Map_Chunk/Map_Chunk_3.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_4.tscn"),
+	],
+	"hard": [
+		preload("res://Map_Chunk/Map_Chunk_5.tscn")
+	]
+}
+var elapsed_chunks = 0
+
 onready var movingCamera = get_node("../MovingCamera")
 
 func _ready():
@@ -21,13 +40,22 @@ func _physics_process(_delta):
 		add_chunk()
 
 func add_chunk():
-	selected_scene_index = random_scene.randi() % scenes.size()
-	var new_scene = scenes[selected_scene_index].instance()
+	var new_scene = select_chunk().instance()
 
 	current_position.y -= new_scene.get_chunck_height()
 	new_scene.position.y = current_position.y
 	
 	add_child(new_scene)
-	
+	elapsed_chunks += 1
+
+func select_chunk():
+	if elapsed_chunks < len(starting_chunks):
+		return starting_chunks[elapsed_chunks]
+	else:
+		var coeff = -movingCamera.get_distance_from_begin()
+		var selected_level_index = random_scene.randi_range(0, 2)
+		var selected_level = other_chunks.values()[selected_level_index]
+		return selected_level[random_scene.randi_range(0, selected_level.size() - 1)]
+		
 func drop_chunk():
 	get_child(0).queue_free()
