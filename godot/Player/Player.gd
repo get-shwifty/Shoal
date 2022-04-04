@@ -39,7 +39,8 @@ func _physics_process(delta):
 	var children = fishes.get_children()
 	
 	if children.size() > 0:
-		emit_signal("nb_fishes",children.size())
+		emit_signal("nb_fishes", children.size())
+
 		match current_pattern:
 			Pattern.CIRCLE:
 				set_target_pos_circle(children)

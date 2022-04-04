@@ -1,23 +1,28 @@
 extends MarginContainer
 
 onready var main_node = get_tree().get_root().get_node("Main")
+onready var distanceTextNode = $VBox/Distance/Distance
+onready var numberFishesTextNode = $VBox/Max_Of_Fishes/Number_Fishes
+onready var ScoreTextNode = $VBox/Score/Score
 
-var max_of_fishes = 12
+var max_of_fishes = 0
+var nb_fishes = 0
 var score = 0
+var traveled_distance = 0
 
-func _ready():
+func display_scores():
+	distanceTextNode.text = str(traveled_distance)
+	numberFishesTextNode.text = str(max_of_fishes)
+	ScoreTextNode.text = str(score)
 
-	$VBox/Max_Of_Fishes/Number_Fishes.text = str(max_of_fishes)
-	$VBox/Score/Score.text = str(main_node.score)
+func _on_AnimatedObjects_traveled_distance(distance):
+	var diff = int(distance - traveled_distance)
+	if diff > 0:
+		traveled_distance += diff
+		score += diff * nb_fishes
+		display_scores()
 
-func _get_nb_fishes(nb_fish):
-	print(nb_fish)
-	if nb_fish > max_of_fishes:
-		max_of_fishes = nb_fish
-
-func _on_Timer_timeout():
-	$VBox/Distance/Distance.text = str(main_node.distance)
-	$VBox/Max_Of_Fishes/Number_Fishes.text = str(max_of_fishes)
-	$VBox/Score/Score.text = str(main_node.score)
-	pass
-	
+func _on_Player_nb_fishes(fishes):
+	nb_fishes = fishes
+	if nb_fishes > max_of_fishes:
+		max_of_fishes = nb_fishes

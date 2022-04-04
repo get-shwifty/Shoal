@@ -39,3 +39,7 @@ autoplay = true
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
+
+[connection signal="traveled_distance" from="AnimatedObjects" to="AnimatedObjects/GUI" method="_on_AnimatedObjects_traveled_distance"]
+[connection signal="end_game" from="AnimatedObjects/Player" to="." method="_on_Player_end_game"]
+[connection signal="nb_fishes" from="AnimatedObjects/Player" to="AnimatedObjects/GUI" method="_on_Player_nb_fishes"]
