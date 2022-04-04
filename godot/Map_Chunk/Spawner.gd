@@ -21,7 +21,7 @@ func _physics_process(_delta):
 		add_chunk()
 
 func add_chunk():
-	selected_scene_index = random_scene.randi_range(0, scenes.size()-1)
+	selected_scene_index = random_scene.randi() % scenes.size()
 	var new_scene = scenes[selected_scene_index].instance()
 
 	current_position.y -= new_scene.get_chunck_height()
