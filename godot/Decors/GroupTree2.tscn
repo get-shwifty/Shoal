@@ -18,7 +18,7 @@ position = Vector2( 4.60313, -4.71613 )
 position = Vector2( 2.73027, 25.25 )
 
 [node name="Tree5" parent="." instance=ExtResource( 1 )]
-position = Vector2( -10.3799, 77.6908 )
+position = Vector2( -2.51378, 67.2026 )
 
 [node name="Tree6" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1.23195, 89.6772 )
