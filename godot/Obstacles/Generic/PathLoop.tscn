@@ -11,6 +11,7 @@ _data = {
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2( 68, 0 )
 rotation = 1.5708
 script = ExtResource( 1 )
 __meta__ = {
