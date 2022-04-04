@@ -4,7 +4,6 @@ extends Node2D
 # var a = 2
 # var b = "text"
 signal fished
-signal start_fishing
 
 var is_active = true
 var fishing = false
@@ -29,7 +28,6 @@ func catch_fish(body):
 	fished.append(body)
 	call_deferred('stop_fish', body)
 	if not fishing:
-		emit_signal("start_fishing")
 		$Timer.start(fishing_time)
 		fishing = true
 

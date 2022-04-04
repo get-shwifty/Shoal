@@ -86,7 +86,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "Iddle"
-frame = 3
+frame = 2
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -98,12 +98,13 @@ position = Vector2( -21.0141, 3.21592 )
 shape = SubResource( 3 )
 
 [node name="FishCatcher" parent="." instance=ExtResource( 3 )]
-fishing_time = 0.75
+fishing_time = 0.2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -6.118
 
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="fished" from="FishCatcher" to="." method="_on_FishCatcher_fished"]
-[connection signal="start_fishing" from="FishCatcher" to="." method="_on_FishCatcher_start_fishing"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Decoration/trees.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=4]
 [ext_resource path="res://Obstacles/FisherLeft.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Obstacles/FisherRight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Obstacles/Rapides.tscn" type="PackedScene" id=7]
 
 [node name="Map_Chunk_2" type="Node2D"]
 script = ExtResource( 4 )
@@ -35,3 +36,39 @@ position = Vector2( 165.224, 59.6404 )
 
 [node name="FisherRight" parent="." instance=ExtResource( 6 )]
 position = Vector2( 217.559, 56.6952 )
+
+[node name="Rapides" parent="." instance=ExtResource( 7 )]
+position = Vector2( 169.736, 162.318 )
+
+[node name="Rapides4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 154.385, 170.327 )
+
+[node name="Rapides2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 185.755, 180.338 )
+
+[node name="Rapides3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 201.773, 167.657 )
+
+[node name="Rapides5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 218.458, 156.979 )
+
+[node name="Rapides6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 233.809, 146.3 )
+
+[node name="Rapides7" parent="." instance=ExtResource( 7 )]
+position = Vector2( 244.487, 156.311 )
+
+[node name="Rocks" parent="." instance=ExtResource( 3 )]
+position = Vector2( 159.058, 164.32 )
+
+[node name="Rocks2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 174.409, 182.34 )
+
+[node name="Rocks3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 201.773, 159.648 )
+
+[node name="Rocks4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 233.141, 142.963 )
+
+[node name="Rocks5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 243.153, 174.999 )

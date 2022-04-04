@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Camera/MovingCamera.gd" type="Script" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
@@ -9,6 +9,9 @@ extents = Vector2( 194, 10 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 194, 110 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 191.65, 107.728 )
 
 [node name="MovingCamera" type="Node2D"]
 position = Vector2( 0, -216 )
@@ -35,6 +38,7 @@ position = Vector2( 192, 8 )
 shape = SubResource( 1 )
 
 [node name="OutsideCameraArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 2
 
@@ -47,6 +51,14 @@ margin_left = 7.0
 margin_top = 8.0
 margin_right = 54.0
 margin_bottom = 34.0
+
+[node name="RapidDetector" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RapidDetector"]
+position = Vector2( 190.993, 109.074 )
+shape = SubResource( 3 )
 
 [connection signal="traveled_distance" from="." to="GUI" method="_on_MovingCamera_traveled_distance"]
 [connection signal="nb_fishes" from="Player" to="GUI" method="_on_Player_nb_fishes"]

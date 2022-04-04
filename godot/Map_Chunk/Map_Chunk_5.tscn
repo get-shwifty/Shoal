@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Obstacles/Fish_Shoal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Obstacles/Predator.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=4]
 [ext_resource path="res://Map_Chunk/PathLoop.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Obstacles/FisherRight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Obstacles/FisherLeft.tscn" type="PackedScene" id=7]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -29,6 +31,15 @@ curve = SubResource( 1 )
 
 [node name="Predator" parent="PathLoop/PathFollow2D" index="0" instance=ExtResource( 3 )]
 rotation = 1.5708
+
+[node name="AnimatedSprite" parent="PathLoop/PathFollow2D/Predator" index="0"]
+frame = 2
+
+[node name="FishingRode" parent="." instance=ExtResource( 7 )]
+position = Vector2( 254.302, 300.771 )
+
+[node name="FisherRight" parent="." instance=ExtResource( 6 )]
+position = Vector2( 120.272, 461.702 )
 
 [editable path="PathLoop"]
 [editable path="PathLoop/PathFollow2D/Predator"]
