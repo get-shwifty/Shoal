@@ -11,5 +11,5 @@ dest_files=[ "res://.import/bloup.ogg-a8b047061d62583c5b2e0029e790d444.oggstr" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

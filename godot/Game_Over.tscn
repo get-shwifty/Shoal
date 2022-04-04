@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Minecraft.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Obstacles/Predator.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Map_Chunk/PathLoop.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Obstacles/FisherRight.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Obstacles/Fisher.gd" type="Script" id=8]
 [ext_resource path="res://Obstacles/BigRock.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Font.tres" type="DynamicFont" id=10]
 [ext_resource path="res://Game_Over.gd" type="Script" id=11]
@@ -50,17 +51,17 @@ position = Vector2( 104.014, 79.9231 )
 position = Vector2( 219, 210 )
 
 [node name="AnimatedSprite" parent="SmallRock" index="0"]
-frame = 2
+frame = 1
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 80, 128 )
 
 [node name="AnimatedSprite" parent="StaticBody2D2" index="0"]
 animation = "DiagRight"
-frame = 2
 
 [node name="FisherRight" parent="." instance=ExtResource( 7 )]
 position = Vector2( 206.073, 98.9008 )
+script = ExtResource( 8 )
 
 [node name="PathLoop" parent="." instance=ExtResource( 6 )]
 position = Vector2( 237.424, 95.4153 )

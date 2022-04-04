@@ -7,7 +7,9 @@ var selected_scene_index = 0
 var current_position = Vector2.ZERO
 
 export var starting_chunks = [
-	preload("res://Map_Chunk/Map_Chunk_1.tscn")
+	preload("res://Map_Chunk/Map_Chunk_5.tscn"),
+	preload("res://Map_Chunk/Map_Chunk_1.tscn"), 
+	preload("res://Map_Chunk/Map_Chunk_4.tscn")
 ]
 export var max_distance = 600
 export var randomness = 0.2
