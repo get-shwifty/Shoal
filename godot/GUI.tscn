@@ -11,8 +11,9 @@ font_data = ExtResource( 1 )
 [sub_resource type="Theme" id=1]
 
 [sub_resource type="DynamicFont" id=2]
-size = 7
+size = 5
 outline_color = Color( 0.917647, 0.870588, 0.870588, 1 )
+extra_spacing_top = -1
 font_data = ExtResource( 1 )
 
 [node name="GUI" type="MarginContainer"]
@@ -24,7 +25,7 @@ script = ExtResource( 2 )
 
 [node name="VBox" type="VBoxContainer" parent="."]
 margin_right = 47.0
-margin_bottom = 28.0
+margin_bottom = 25.0
 
 [node name="Max_Of_Fishes" type="HBoxContainer" parent="VBox"]
 margin_right = 47.0
@@ -33,7 +34,7 @@ margin_bottom = 6.0
 [node name="Text_Number_Fishes" type="Label" parent="VBox/Max_Of_Fishes"]
 margin_right = 40.0
 margin_bottom = 6.0
-custom_colors/font_color = Color( 0.101961, 0.121569, 0.180392, 1 )
+custom_colors/font_color = Color( 0.184314, 0.298039, 0.423529, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "Max of fishes : "
@@ -44,7 +45,7 @@ valign = 1
 margin_left = 44.0
 margin_right = 47.0
 margin_bottom = 6.0
-custom_colors/font_color = Color( 0.101961, 0.121569, 0.180392, 1 )
+custom_colors/font_color = Color( 0.184314, 0.298039, 0.423529, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "0"
@@ -58,7 +59,7 @@ margin_bottom = 16.0
 margin_right = 26.0
 margin_bottom = 6.0
 theme = SubResource( 1 )
-custom_colors/font_color = Color( 0.101961, 0.121569, 0.180392, 1 )
+custom_colors/font_color = Color( 0.184314, 0.298039, 0.423529, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "Distance : "
@@ -67,7 +68,7 @@ text = "Distance : "
 margin_left = 30.0
 margin_right = 33.0
 margin_bottom = 6.0
-custom_colors/font_color = Color( 0.101961, 0.121569, 0.180392, 1 )
+custom_colors/font_color = Color( 0.184314, 0.298039, 0.423529, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
 text = "0"
@@ -75,21 +76,21 @@ text = "0"
 [node name="Score" type="HBoxContainer" parent="VBox"]
 margin_top = 20.0
 margin_right = 47.0
-margin_bottom = 28.0
+margin_bottom = 25.0
 
 [node name="Text_Score" type="Label" parent="VBox/Score"]
-margin_right = 26.0
-margin_bottom = 8.0
-custom_colors/font_color = Color( 0.101961, 0.121569, 0.180392, 1 )
+margin_right = 20.0
+margin_bottom = 5.0
+custom_colors/font_color = Color( 0.184314, 0.298039, 0.423529, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Score : "
 
 [node name="Score" type="Label" parent="VBox/Score"]
-margin_left = 30.0
-margin_right = 34.0
-margin_bottom = 8.0
-custom_colors/font_color = Color( 0.101961, 0.121569, 0.180392, 1 )
+margin_left = 24.0
+margin_right = 27.0
+margin_bottom = 5.0
+custom_colors/font_color = Color( 0.184314, 0.298039, 0.423529, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "0"
