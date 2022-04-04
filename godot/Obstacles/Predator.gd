@@ -21,4 +21,7 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_FishCatcher_fished(fished):
-	pass
+	print("toto")
+	$Tween.interpolate_property($AnimatedSprite, "modulate", Color(1,1,1,1), 
+	Color(1,1,1,0), 2.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$Tween.start()
