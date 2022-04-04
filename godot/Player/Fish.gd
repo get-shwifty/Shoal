@@ -65,6 +65,16 @@ func _physics_process(delta):
 #				velocity *= 0.6
 			velocity = move_and_slide(velocity)
 		
+		var col_count = get_slide_count()
+		if col_count > 0:
+			for i in col_count:
+				if get_slide_collision(i).collider is KinematicBody2D:
+					# kinda hacky, we suppose fish are the only ones with kinematicBody2D
+					continue
+				stun()
+
+func _process(delta):
+	if current_status == status.Normal:
 		if target_pos != null and delta_pos.length() > 0:
 			pivot.rotation = lerp_angle(pivot.rotation, delta_pos.angle() + PI / 2, delta * ROTATION_SPEED)
 
