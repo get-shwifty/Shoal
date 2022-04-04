@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Decors/Tree.tscn" type="PackedScene" id=1]
+
+[node name="GroupTree2" type="Node2D"]
+position = Vector2( -0.749161, -0.374573 )
+
+[node name="Tree2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -7.38332, 9.51778 )
+
+[node name="Tree3" parent="." instance=ExtResource( 1 )]
+position = Vector2( -6.63417, 45.4772 )
+
+[node name="Tree" parent="." instance=ExtResource( 1 )]
+position = Vector2( 4.60313, -4.71613 )
+
+[node name="Tree4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 2.73027, 25.25 )
+
+[node name="Tree5" parent="." instance=ExtResource( 1 )]
+position = Vector2( -10.3799, 77.6908 )
+
+[node name="Tree6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1.23195, 89.6772 )
