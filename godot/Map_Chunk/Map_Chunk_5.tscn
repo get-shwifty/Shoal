@@ -55,11 +55,8 @@ position = Vector2( 194.094, 643.84 )
 [node name="RiverFlow2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 198.548, 422.007 )
 
-[node name="RiverFlow3" parent="." instance=ExtResource( 8 )]
-position = Vector2( 192.312, 204.627 )
-
 [node name="RiverFlow4" parent="." instance=ExtResource( 8 )]
-position = Vector2( 194.984, 38.0292 )
+position = Vector2( 195.614, 160.242 )
 
 [editable path="PathLoop"]
 [editable path="PathLoop/PathFollow2D/Predator"]

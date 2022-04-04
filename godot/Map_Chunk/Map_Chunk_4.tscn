@@ -33,7 +33,7 @@ position = Vector2( 302.179, 564.82 )
 
 [node name="AnimatedSprite" parent="StaticBody2D4" index="0"]
 animation = "DiagRight"
-frame = 0
+frame = 3
 
 [node name="StaticBody2D5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 253.774, 610.534 )
@@ -79,7 +79,7 @@ rotation = 0.760204
 scale = Vector2( 0.801409, 0.801409 )
 
 [node name="RiverFlow4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 188.966, 79.1995 )
+position = Vector2( 195.573, 31.5338 )
 
 [editable path="StaticBody2D4"]
 [editable path="StaticBody2D4/StunFishZone"]
