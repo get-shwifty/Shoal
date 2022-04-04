@@ -61,6 +61,7 @@ position = Vector2( 190.993, 109.074 )
 shape = SubResource( 3 )
 
 [connection signal="traveled_distance" from="." to="GUI" method="_on_MovingCamera_traveled_distance"]
+[connection signal="nb_fishes" from="Player" to="." method="_on_Player_nb_fishes"]
 [connection signal="nb_fishes" from="Player" to="GUI" method="_on_Player_nb_fishes"]
 [connection signal="area_entered" from="CameraControlTrigger" to="." method="_on_CameraControlTrigger_area_entered"]
 [connection signal="body_exited" from="OutsideCameraArea" to="." method="_on_OutsideCameraArea_body_exited"]

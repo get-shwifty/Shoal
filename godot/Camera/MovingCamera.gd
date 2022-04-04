@@ -17,13 +17,14 @@ export(int) var DISTANCE_MAX_SPEED = 1500
 
 const ACCELERATION = 5
 var velocity = 0
-
+var started = false
 var forced_speed = null
 
 func _physics_process(delta):
-	velocity = lerp(velocity, camera_speed(), ACCELERATION * delta)
-	position.y -= velocity * delta
-	emit_signal("traveled_distance", get_distance_from_begin())
+	if started:
+		velocity = lerp(velocity, camera_speed(), ACCELERATION * delta)
+		position.y -= velocity * delta
+		emit_signal("traveled_distance", get_distance_from_begin())
 
 func camera_speed():
 	if forced_speed != null:
@@ -53,3 +54,7 @@ func _on_CameraControlTrigger_area_entered(area):
 func _on_OutsideCameraArea_body_exited(body):
 	if not body.disabled and not body.is_queued_for_deletion():
 		body.queue_free()
+
+func _on_Player_nb_fishes(nb_fishes):
+	if not started and nb_fishes > 1:
+		started = true
