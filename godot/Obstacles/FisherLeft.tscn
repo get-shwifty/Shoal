@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Obstacles/Fisher.gd" type="Script" id=2]
 [ext_resource path="res://Obstacles/Generic/FishCatcher.tscn" type="PackedScene" id=3]
@@ -6,49 +6,49 @@
 [ext_resource path="res://Assets/animations/fisherman-anim.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Fisher/fisherman-left-anim.png" type="Texture" id=6]
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 5 )
 region = Rect2( 0, 144, 64, 48 )
 
-[sub_resource type="AtlasTexture" id=18]
+[sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 5 )
 region = Rect2( 64, 144, 64, 48 )
 
-[sub_resource type="AtlasTexture" id=19]
+[sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 5 )
 region = Rect2( 128, 144, 64, 48 )
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 5 )
 region = Rect2( 192, 144, 64, 48 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 5 )
 region = Rect2( 256, 144, 64, 48 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 5 )
 region = Rect2( 320, 144, 64, 48 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 5 )
 region = Rect2( 384, 144, 64, 48 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 64, 48 )
+region = Rect2( 0, 96, 64, 48 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 0, 64, 48 )
+region = Rect2( 64, 96, 64, 48 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 6 )
-region = Rect2( 128, 0, 64, 48 )
+region = Rect2( 128, 96, 64, 48 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 6 )
-region = Rect2( 192, 0, 64, 48 )
+region = Rect2( 192, 96, 64, 48 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 5 )
@@ -66,14 +66,42 @@ region = Rect2( 128, 96, 64, 48 )
 atlas = ExtResource( 5 )
 region = Rect2( 192, 96, 64, 48 )
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 144, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 6 )
+region = Rect2( 64, 144, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 6 )
+region = Rect2( 128, 144, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 6 )
+region = Rect2( 192, 144, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 6 )
+region = Rect2( 256, 144, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=52]
+atlas = ExtResource( 6 )
+region = Rect2( 320, 144, 64, 48 )
+
+[sub_resource type="AtlasTexture" id=53]
+atlas = ExtResource( 6 )
+region = Rect2( 384, 144, 64, 48 )
+
+[sub_resource type="SpriteFrames" id=39]
 animations = [ {
-"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ) ],
 "loop": false,
 "name": "Fish",
 "speed": 8.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "IddleReverse",
 "speed": 5.0
@@ -81,6 +109,11 @@ animations = [ {
 "frames": [ SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
 "loop": true,
 "name": "Iddle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ), SubResource( 53 ) ],
+"loop": true,
+"name": "FishReverse",
 "speed": 5.0
 } ]
 
@@ -91,9 +124,9 @@ radius = 5.16313
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+frames = SubResource( 39 )
 animation = "Iddle"
-frame = 1
+frame = 3
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]
