@@ -11,6 +11,12 @@ var score = 0
 var traveled_distance = 0
 
 func display_scores():
+	
+	#Je sais que c'est dégeullasse, mais je n'ai pas envie de tout refaire
+	Global.score = score
+	Global.traveled_distance = traveled_distance
+	Global.max_of_fishes = max_of_fishes
+	
 	distanceTextNode.text = str(traveled_distance)
 	numberFishesTextNode.text = str(max_of_fishes)
 	ScoreTextNode.text = str(score)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Minecraft.ttf" type="DynamicFontData" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Obstacles/FisherRight.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Obstacles/Fisher.gd" type="Script" id=8]
 [ext_resource path="res://Obstacles/BigRock.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/Font.tres" type="DynamicFont" id=10]
+[ext_resource path="res://Game_Over.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -20,7 +22,10 @@ _data = {
 "points": PoolVector2Array( -33.6188, 0.353553, 33.6188, -0.353553, -62.9293, -49.7995, -3.7614, -31.6995, 3.7614, 31.6995, 23.584, 10.5218, 84.4426, 21.5223, -84.4426, -21.5223, -64.1198, 81.9548, -0.896447, 31.9442, 0.896447, -31.9442, -174.444, 2.58478, -79.622, -1.76878, 79.622, 1.76878, -62.9293, -49.7995 )
 }
 
+[sub_resource type="Theme" id=3]
+
 [node name="Game_Over" type="CanvasLayer"]
+script = ExtResource( 11 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -32,9 +37,9 @@ tile_data = PoolIntArray( 0, 1, 2, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 1, 
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -55.0
-margin_top = 14.0
 margin_right = 55.0
-margin_bottom = 34.0
+margin_bottom = 20.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 1 )
 text = "Game over"
 align = 1
@@ -45,12 +50,14 @@ position = Vector2( 104.014, 79.9231 )
 [node name="SmallRock" parent="." instance=ExtResource( 4 )]
 position = Vector2( 219, 210 )
 
+[node name="AnimatedSprite" parent="SmallRock" index="0"]
+frame = 1
+
 [node name="StaticBody2D2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 80, 128 )
 
 [node name="AnimatedSprite" parent="StaticBody2D2" index="0"]
 animation = "DiagRight"
-frame = 1
 
 [node name="FisherRight" parent="." instance=ExtResource( 7 )]
 position = Vector2( 206.073, 98.9008 )
@@ -74,7 +81,100 @@ position = Vector2( 294.531, 128.725 )
 
 [node name="AnimatedSprite" parent="BigRock" index="0"]
 animation = "DiagLeft"
-frame = 1
+
+[node name="VBox" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -62.0
+margin_top = -69.0
+margin_right = 62.0
+margin_bottom = -21.0
+custom_constants/separation = 0
+alignment = 1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Max_Of_Fishes" type="HBoxContainer" parent="VBox"]
+margin_right = 124.0
+margin_bottom = 16.0
+alignment = 1
+
+[node name="Text_Number_Fishes" type="Label" parent="VBox/Max_Of_Fishes"]
+margin_right = 112.0
+margin_bottom = 16.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "Max of fishes : "
+align = 1
+valign = 1
+
+[node name="Number_Fishes" type="Label" parent="VBox/Max_Of_Fishes"]
+margin_left = 116.0
+margin_right = 124.0
+margin_bottom = 16.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "0"
+
+[node name="Distance" type="HBoxContainer" parent="VBox"]
+margin_top = 16.0
+margin_right = 124.0
+margin_bottom = 32.0
+alignment = 1
+
+[node name="Text_Distance" type="Label" parent="VBox/Distance"]
+margin_left = 18.0
+margin_right = 94.0
+margin_bottom = 16.0
+theme = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "Distance : "
+
+[node name="Distance" type="Label" parent="VBox/Distance"]
+margin_left = 98.0
+margin_right = 106.0
+margin_bottom = 16.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "0"
+
+[node name="Score" type="HBoxContainer" parent="VBox"]
+margin_top = 32.0
+margin_right = 124.0
+margin_bottom = 48.0
+alignment = 1
+
+[node name="Text_Score" type="Label" parent="VBox/Score"]
+margin_left = 28.0
+margin_right = 84.0
+margin_bottom = 16.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "Score : "
+
+[node name="Score" type="Label" parent="VBox/Score"]
+margin_left = 88.0
+margin_right = 96.0
+margin_bottom = 16.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 10 )
+text = "0"
 
 [editable path="SmallRock"]
 [editable path="SmallRock/StunFishZone"]
