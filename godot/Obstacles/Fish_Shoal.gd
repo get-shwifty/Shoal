@@ -14,7 +14,7 @@ func add_fish(body):
 	for child in fishes.get_children() :
 		var gp = child.global_position
 		fishes.remove_child(child)
-		child.set_collision_layer(2)
+		child.set_collision_layer(10)
 		child.rotation = 0
 		body.get_parent().add_child(child)
 		child.global_position = gp

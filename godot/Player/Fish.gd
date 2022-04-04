@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 class_name Fish
 
-const SPEED = 80
-const DIZZY_SPEED = 40
+const SPEED = 140
+const DIZZY_SPEED = 80
 const ROTATION_SPEED = 15
 const KP = 0.4
 
@@ -35,20 +35,16 @@ func _ready():
 	animatedSprite.frame = randi() % 5
 
 func stun():
-#	return
 	if current_status != status.Normal:
 		return
 	current_status = status.Stunned
 	animatedSprite.animation = "stun"
-	animatedSprite.modulate = Color(0.0, 1.0, 1.0)
 	yield(get_tree().create_timer(0.5), "timeout")
 	current_status = status.Dizzy
 	animatedSprite.animation = "swim"
-	animatedSprite.modulate = Color(1.0, 0.0, 1.0)
 	animatedSprite.speed_scale = 0.5
 	yield(get_tree().create_timer(1.0), "timeout")
 	current_status = status.Normal
-	animatedSprite.modulate = Color(0.0, 0.0, 0.0)
 	animatedSprite.speed_scale = 1.0
 
 func _physics_process(delta):
@@ -58,13 +54,15 @@ func _physics_process(delta):
 
 		if target_pos != null:
 			var speed = SPEED
-			if is_next_to_fish() or current_status == status.Dizzy:
+			if current_status == status.Dizzy:
 				speed = DIZZY_SPEED
 			
 			var direction = target_pos - position
 			pivotTarget.rotation = direction.angle()
-			velocity = direction.normalized() * pow(direction.length() * KP, 1) * speed
+			velocity = direction.normalized() * pow(direction.length() * KP, 2) * speed
 			velocity = velocity.clamped(speed)
+#			if is_next_to_fish():
+#				velocity *= 0.6
 			velocity = move_and_slide(velocity)
 		
 		if target_pos != null and delta_pos.length() > 0:
