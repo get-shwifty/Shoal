@@ -39,7 +39,6 @@ func camera_speed():
 func get_distance_from_begin():
 	return -position.y / 16
 
-
 func _on_CameraControlTrigger_area_entered(area):
 	match area.type:
 		ControlType.SET_SPEED:
@@ -50,7 +49,6 @@ func _on_CameraControlTrigger_area_entered(area):
 			forced_speed = 0
 			yield(get_tree().create_timer(area.param), "timeout")
 			forced_speed = null
-
 
 func _on_OutsideCameraArea_body_exited(body):
 	if not body.disabled and not body.is_queued_for_deletion():

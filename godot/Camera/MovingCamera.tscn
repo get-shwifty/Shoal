@@ -19,7 +19,12 @@ anchor_mode = 0
 current = true
 
 [node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 192, 173 )
+
+[node name="Target" parent="Player" index="0"]
+position = Vector2( 192, 170 )
+
+[node name="Fish" parent="Player/Fishes" index="0"]
+position = Vector2( 192, 170 )
 
 [node name="CameraControlTrigger" type="Area2D" parent="."]
 collision_layer = 0
@@ -47,3 +52,5 @@ margin_bottom = 34.0
 [connection signal="nb_fishes" from="Player" to="GUI" method="_on_Player_nb_fishes"]
 [connection signal="area_entered" from="CameraControlTrigger" to="." method="_on_CameraControlTrigger_area_entered"]
 [connection signal="body_exited" from="OutsideCameraArea" to="." method="_on_OutsideCameraArea_body_exited"]
+
+[editable path="Player"]

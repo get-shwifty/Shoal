@@ -4,9 +4,10 @@ signal end_game
 signal fish_added
 signal nb_fishes
 
+onready var target = $Target
 onready var fishes = $Fishes
-onready var target2CirclesLeft = $Target2CirclesLeft
-onready var target2CirclesRight = $Target2CirclesRight
+onready var target2CirclesLeft = $Target/Target2CirclesLeft
+onready var target2CirclesRight = $Target/Target2CirclesRight
 onready var screen_size = get_viewport_rect().size
 
 var direction = Vector2.ZERO
@@ -24,12 +25,12 @@ enum Pattern {
 
 func _physics_process(delta):
 	# Player
-	
+
 	direction = get_direction()
 	velocity = direction * SPEED
-	translate(velocity * delta)
-	position.x = clamp(position.x, 0, screen_size.x)
-	position.y = clamp(position.y, 0, screen_size.y)
+	target.translate(velocity * delta)
+	target.position.x = clamp(target.position.x, 0, screen_size.x)
+	target.position.y = clamp(target.position.y, 0, screen_size.y)
 
 	# Fishes
 
@@ -47,13 +48,12 @@ func _physics_process(delta):
 				set_target_pos_two_circles(children)
 				if Input.is_action_just_pressed("change_formation"):
 					current_pattern = Pattern.CIRCLE
-	
-	if children.size() == 0 :
+	else:
 		emit_signal("end_game")
 
 func set_target_pos_circle(children):
 	for child in children:
-		child.target_pos = Vector2.ZERO
+		child.target_pos = target.position
 
 func set_target_pos_two_circles(children):
 	var children_x = []
@@ -64,9 +64,9 @@ func set_target_pos_two_circles(children):
 
 	for child in children:
 		if child.position.x < median_x:
-			child.target_pos = target2CirclesLeft.position
+			child.target_pos = target.position + target2CirclesLeft.position
 		else:
-			child.target_pos = target2CirclesRight.position
+			child.target_pos = target.position + target2CirclesRight.position
 
 # Target Player
 
