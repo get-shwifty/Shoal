@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Obstacles/Big_Fish_Shoal.tscn" type="PackedScene" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://Assets/Minecraft.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://Obstacles/Predator.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Obstacles/Generic/PathNoLoop.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Assets/GUI/Arrow down.png" type="Texture" id=16]
+[ext_resource path="res://Assets/GUI/Arrow up.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -100,6 +102,7 @@ text = "Move with"
 [node name="ArrowUp" type="Sprite" parent="Arrows"]
 position = Vector2( 321, 545 )
 scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
 
 [node name="ArrowLeft" type="Sprite" parent="Arrows"]
 position = Vector2( 297, 552 )
@@ -114,6 +117,7 @@ texture = ExtResource( 8 )
 [node name="ArrowDown" type="Sprite" parent="Arrows"]
 position = Vector2( 321, 557 )
 scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
 
 [node name="Formations" type="Node2D" parent="."]
 position = Vector2( -261, -244 )
@@ -170,7 +174,7 @@ position = Vector2( 194, -18 )
 curve = SubResource( 3 )
 
 [node name="PathFollow2D" parent="PathNoLoop" index="0"]
-position = Vector2( -2, -110 )
+position = Vector2( 0, -112 )
 SPEED = 30
 
 [node name="Predator" parent="PathNoLoop/PathFollow2D" index="0" instance=ExtResource( 14 )]
