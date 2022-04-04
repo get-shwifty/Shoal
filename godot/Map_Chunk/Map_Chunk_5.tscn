@@ -31,7 +31,7 @@ curve = SubResource( 1 )
 rotation = 1.5708
 
 [node name="AnimatedSprite" parent="PathLoop/PathFollow2D/Predator" index="0"]
-frame = 6
+frame = 0
 
 [editable path="PathLoop"]
 [editable path="PathLoop/PathFollow2D/Predator"]

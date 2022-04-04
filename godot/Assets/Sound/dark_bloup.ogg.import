@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/dark_bloup.ogg-050c1e909ba89c495ae631712ed7e55e.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/dark_bloup.ogg"
+dest_files=[ "res://.import/dark_bloup.ogg-050c1e909ba89c495ae631712ed7e55e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

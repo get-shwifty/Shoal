@@ -14,7 +14,7 @@ func _ready():
 	add_chunk()
 	add_chunk()
 
-func _process(delta):
+func _process(_delta):
 	chunks = self.get_children()
 	
 	if(chunks[chunks.size()-1].global_position.y > camera.global_position.y - 10):

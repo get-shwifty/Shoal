@@ -53,7 +53,7 @@ func dizzy_process(delta):
 		dizzy_timer = -1
 		current_status = status.Normal;
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if current_status != status.Stunned:
 		delta_pos = global_position - old_position
 		old_position = global_position

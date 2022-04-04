@@ -20,8 +20,15 @@ func _on_Area2D_body_entered(body):
 	$FishCatcher.catch_fish(body)
 
 
-func _on_FishCatcher_fished(fished):
-	print("toto")
+func _on_FishCatcher_fished(_fished):
+	var animation = $Splash
+	var old_pos = animation.global_position
+	remove_child(animation)
+	get_parent().get_parent().add_child(animation)
+	animation.global_position = old_pos
+	animation.show()
+	animation.play("Splash")
+	$AudioStreamPlayer.play()
 	$Tween.interpolate_property($AnimatedSprite, "modulate", Color(1,1,1,1), 
-	Color(1,1,1,0), 2.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	Color(1,1,1,0),1, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$Tween.start()
