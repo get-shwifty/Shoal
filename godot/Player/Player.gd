@@ -24,19 +24,25 @@ enum Pattern {
 }
 
 func _physics_process(delta):
-	# Player
-
-	direction = get_direction()
-	velocity = direction * SPEED
-	target.translate(velocity * delta)
-	target.position.x = clamp(target.position.x, 0, screen_size.x)
-	target.position.y = clamp(target.position.y, 0, screen_size.y)
-
-	# Fishes
-
 	var children = fishes.get_children()
 	
 	if children.size() > 0:
+		var nearest_fish_dist = 1000000000.0
+		for child in fishes.get_children():
+			var dist = (child.position - target.position).length()
+			if dist < nearest_fish_dist:
+				nearest_fish_dist = dist
+
+		var factor = 1.0
+		if nearest_fish_dist < 5:
+			factor = 2.5
+
+		direction = get_direction()
+		velocity = direction * SPEED * factor
+		target.translate(velocity * delta)
+		target.position.x = clamp(target.position.x, 0, screen_size.x)
+		target.position.y = clamp(target.position.y, 0, screen_size.y)
+
 		emit_signal("nb_fishes", children.size())
 
 		match current_pattern:
@@ -52,8 +58,16 @@ func _physics_process(delta):
 		emit_signal("end_game")
 
 func set_target_pos_circle(children):
+#	var phi = 0.0
+#	var step_phi = 0.01
+#	var a = 6
+#	var cur_pos = Vector2.ZERO
 	for child in children:
-		child.target_pos = target.position
+		child.target_pos = target.position # + cur_pos
+#		var old_pos = cur_pos
+#		while (cur_pos - old_pos).length() < 6:
+#			phi += step_phi
+#			cur_pos = Vector2(a*sqrt(phi)*cos(phi), a*sqrt(phi)*sin(phi))
 
 func set_target_pos_two_circles(children):
 	var children_x = []

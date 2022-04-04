@@ -4,12 +4,11 @@ class_name Fish
 
 const SPEED = 140
 const DIZZY_SPEED = 140
-const ROTATION_SPEED = 15
-const KP = 0.4
+const ROTATION_SPEED = 20
+const KP = 0.05
 
 onready var pivot = $Pivot
 onready var animatedSprite = $Pivot/AnimatedSprite
-onready var pivotTarget = $PivotTarget
 
 var disabled = false
 var next_to_fish = 0
@@ -58,20 +57,17 @@ func _physics_process(delta):
 				speed = DIZZY_SPEED
 			
 			var direction = target_pos - position
-			pivotTarget.rotation = direction.angle()
 			velocity = direction.normalized() * pow(direction.length() * KP, 2) * speed
 			velocity = velocity.clamped(speed)
 #			if is_next_to_fish():
 #				velocity *= 0.6
-			velocity = move_and_slide(velocity)
-
-func _process(delta):
-	if current_status == status.Normal:
-		if target_pos != null and delta_pos.length() > 0:
-			pivot.rotation = lerp_angle(pivot.rotation, delta_pos.angle() + PI / 2, delta * ROTATION_SPEED)
+			velocity = move_and_slide(velocity, Vector2.ZERO, false, 2)
+			
+			if velocity.length() > 10 and delta_pos.length() > 0:
+				pivot.rotation = lerp_angle(pivot.rotation, delta_pos.angle() + PI / 2, delta * ROTATION_SPEED)
 	else:
 		global_position = old_position
-			
+
 func disable():
 	disabled = true
 	collision_layer = 0
