@@ -8,6 +8,7 @@ func _process(delta):
 	fishes.rotation_degrees -= ROTATION_SPEED * delta
 
 func _on_Area2D_body_entered(body):
+	$AudioStreamPlayer.play()
 	call_deferred("add_fish", body)
 
 func add_fish(body):
