@@ -77,6 +77,10 @@ position = Vector2( 253.506, 180.487 )
 [node name="PathLoop" parent="." instance=ExtResource( 2 )]
 position = Vector2( 269.56, 131.43 )
 
+[node name="PathFollow2D" parent="PathLoop" index="0"]
+position = Vector2( -54, -113 )
+rotation = 0.0598908
+
 [node name="Predator" parent="PathLoop/PathFollow2D" index="0" instance=ExtResource( 4 )]
 rotation = 1.5708
 
