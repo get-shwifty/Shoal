@@ -38,6 +38,10 @@ position = Vector2( 192, 108 )
 shape = SubResource( 2 )
 
 [node name="GUI" parent="." instance=ExtResource( 5 )]
+margin_left = 7.0
+margin_top = 8.0
+margin_right = 54.0
+margin_bottom = 34.0
 
 [connection signal="traveled_distance" from="." to="GUI" method="_on_MovingCamera_traveled_distance"]
 [connection signal="nb_fishes" from="Player" to="GUI" method="_on_Player_nb_fishes"]

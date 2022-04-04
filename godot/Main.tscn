@@ -28,3 +28,7 @@ autoplay = true
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
+
+[connection signal="end_game" from="MovingCamera/Player" to="." method="_on_Player_end_game"]
+
+[editable path="MovingCamera"]
