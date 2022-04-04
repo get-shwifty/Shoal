@@ -2,6 +2,7 @@ extends Node2D
 
 const gotya1 = preload("res://Assets/Sound/got_ya.ogg")
 const gotya2 = preload("res://Assets/Sound/got_ya2.ogg")
+const splash = preload("res://Assets/Sound/dark_bloup.ogg")
 const sounds = [gotya1, gotya2]
 # Declare member variables here. Examples:
 # var a = 2
@@ -19,7 +20,12 @@ func _on_Area2D_body_entered(body):
 
 func _on_FishCatcher_fished(fish_list):
 	if len(fish_list) > 0:
-		randomize()
-		$AudioStreamPlayer.stream = sounds[randi()%sounds.size()]
+		$AudioStreamPlayer.stream = splash
 		$AudioStreamPlayer.play()
 		$AnimatedSprite.play("Fish")
+
+
+func _on_FishCatcher_start_fishing():
+	randomize()
+	$AudioStreamPlayer.stream = sounds[randi()%sounds.size()]
+	$AudioStreamPlayer.play()

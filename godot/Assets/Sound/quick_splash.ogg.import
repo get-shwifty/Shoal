@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/quick_splash.ogg-d3a6a95f8f3692e763eef4c1dc9b5314.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sound/quick_splash.ogg"
+dest_files=[ "res://.import/quick_splash.ogg-d3a6a95f8f3692e763eef4c1dc9b5314.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
