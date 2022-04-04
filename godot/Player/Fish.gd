@@ -17,7 +17,7 @@ enum status {
 }
 var target_pos = null
 var velocity = Vector2.ZERO
-
+var velocity_debuff = 1
 var current_status = status.Normal
 var stun_timer = -1
 var dizzy_timer = -1

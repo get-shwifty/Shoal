@@ -11,5 +11,5 @@ dest_files=[ "res://.import/quick_splash.ogg-d3a6a95f8f3692e763eef4c1dc9b5314.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

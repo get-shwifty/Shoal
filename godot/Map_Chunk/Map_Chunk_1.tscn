@@ -1,16 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Decoration/predator.png" type="Texture" id=2]
 [ext_resource path="res://Obstacles/Rocks.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=4]
 [ext_resource path="res://Assets/Decoration/trees.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Decoration/bench.png" type="Texture" id=6]
 [ext_resource path="res://Obstacles/FisherLeft.tscn" type="PackedScene" id=7]
-
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 6 )
-region = Rect2( 3.32739, 28.627, 50.6096, 31.631 )
 
 [node name="Map_Chunk_1" type="Node2D"]
 script = ExtResource( 4 )
@@ -38,16 +33,44 @@ position = Vector2( 239, 52 )
 texture = ExtResource( 2 )
 
 [node name="Trees" type="Sprite" parent="."]
-position = Vector2( 314, 130 )
+position = Vector2( 301.842, 131.131 )
 texture = ExtResource( 5 )
+offset = Vector2( 8.38293, -13.8735 )
+
+[node name="Trees3" type="Sprite" parent="."]
+position = Vector2( 129.882, 136.322 )
+rotation = 0.321288
+scale = Vector2( 0.992626, 1 )
+texture = ExtResource( 5 )
+offset = Vector2( 8.38293, -13.8735 )
+
+[node name="Trees6" type="Sprite" parent="."]
+position = Vector2( 118.412, 340.879 )
+rotation = 0.321288
+scale = Vector2( 1.08365, 1.0917 )
+texture = ExtResource( 5 )
+offset = Vector2( 8.38293, -13.8735 )
+
+[node name="Trees4" type="Sprite" parent="."]
+position = Vector2( 114.308, 287.814 )
+rotation = 0.321288
+scale = Vector2( 1.41005, 1.42053 )
+texture = ExtResource( 5 )
+offset = Vector2( 8.38293, -13.8735 )
+
+[node name="Trees5" type="Sprite" parent="."]
+position = Vector2( 105.504, 231.439 )
+rotation = 0.321288
+scale = Vector2( 1.08365, 1.0917 )
+texture = ExtResource( 5 )
+offset = Vector2( 8.38293, -13.8735 )
 
 [node name="Trees2" type="Sprite" parent="."]
 position = Vector2( 59, 62 )
 texture = ExtResource( 5 )
 
-[node name="Bench" type="Sprite" parent="."]
-position = Vector2( 255, 192 )
-texture = SubResource( 1 )
-
 [node name="FishingRode" parent="." instance=ExtResource( 7 )]
 position = Vector2( 238.272, 305.019 )
+
+[node name="FishingRode2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 253.506, 180.487 )

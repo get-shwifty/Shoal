@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Minecraft.ttf" type="DynamicFontData" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Obstacles/Predator.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Map_Chunk/PathLoop.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Obstacles/FisherRight.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Obstacles/Fisher.gd" type="Script" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -48,6 +49,7 @@ position = Vector2( 80, 128 )
 
 [node name="FisherRight" parent="." instance=ExtResource( 7 )]
 position = Vector2( 206.073, 98.9008 )
+script = ExtResource( 8 )
 
 [node name="PathLoop" parent="." instance=ExtResource( 6 )]
 position = Vector2( 237.424, 95.4153 )
@@ -56,7 +58,7 @@ curve = SubResource( 2 )
 
 [node name="PathFollow2D" parent="PathLoop" index="0"]
 position = Vector2( -62.9293, -49.7995 )
-rotation = 0.0245259
+rotation = 0.0245249
 
 [node name="Predator" parent="PathLoop/PathFollow2D" index="0" instance=ExtResource( 5 )]
 rotation = 1.5708
