@@ -6,7 +6,7 @@
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=4]
 [ext_resource path="res://Obstacles/FisherRight.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Obstacles/FisherLeft.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Obstacles/Fisher.gd" type="Script" id=7]
+[ext_resource path="res://Decors/RiverFlow.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Obstacles/BigRock.tscn" type="PackedScene" id=8]
 
 [node name="Map_Chunk_4" type="Node2D"]
@@ -33,16 +33,19 @@ position = Vector2( 302.179, 564.82 )
 
 [node name="AnimatedSprite" parent="StaticBody2D4" index="0"]
 animation = "DiagRight"
-frame = 3
+frame = 0
 
 [node name="StaticBody2D5" parent="." instance=ExtResource( 3 )]
-position = Vector2( 353, 616 )
+position = Vector2( 253.774, 610.534 )
+rotation = -0.663746
 
-[node name="StaticBody2D6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 342, 637 )
+[node name="SmallRock" parent="." instance=ExtResource( 3 )]
+position = Vector2( 270.524, 578.558 )
+rotation = -0.650945
 
 [node name="StaticBody2D7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 319, 657 )
+position = Vector2( 266.934, 361.084 )
+rotation = -0.899746
 
 [node name="StaticBody2D8" parent="." instance=ExtResource( 3 )]
 position = Vector2( 145, 458 )
@@ -55,13 +58,28 @@ position = Vector2( 358, 432 )
 
 [node name="FisherRight" parent="." instance=ExtResource( 5 )]
 position = Vector2( 138.195, 126.244 )
-script = ExtResource( 7 )
 
 [node name="FishingRode" parent="." instance=ExtResource( 6 )]
 position = Vector2( 260.966, 31.2229 )
 
 [node name="BigRock" parent="." instance=ExtResource( 8 )]
 position = Vector2( 192.018, 261.663 )
+
+[node name="RiverFlow" parent="." instance=ExtResource( 7 )]
+position = Vector2( 202.314, 723.26 )
+
+[node name="RiverFlow2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 233.016, 548.396 )
+rotation = -0.778245
+scale = Vector2( 0.801409, 0.801409 )
+
+[node name="RiverFlow3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 159.599, 396.224 )
+rotation = 0.760204
+scale = Vector2( 0.801409, 0.801409 )
+
+[node name="RiverFlow4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 188.966, 79.1995 )
 
 [editable path="StaticBody2D4"]
 [editable path="StaticBody2D4/StunFishZone"]

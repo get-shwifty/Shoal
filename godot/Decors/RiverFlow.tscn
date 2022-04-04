@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Assets/animations/riverflow-anim.png" type="Texture" id=1]
+[ext_resource path="res://Decors/RiverFlow.gd" type="Script" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -31,9 +32,11 @@ animations = [ {
 } ]
 
 [node name="RiverFlow" type="Node2D"]
+script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 3.99426, -0.210228 )
 scale = Vector2( 1.691, 0.25 )
 frames = SubResource( 6 )
-frame = 3
+frame = 1
 playing = true

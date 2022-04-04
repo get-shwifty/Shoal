@@ -7,7 +7,7 @@
 [ext_resource path="res://Map_Chunk/PathLoop.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Obstacles/FisherRight.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Obstacles/FisherLeft.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Obstacles/Fisher.gd" type="Script" id=8]
+[ext_resource path="res://Decors/RiverFlow.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Obstacles/BigRock.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Curve2D" id=1]
@@ -35,20 +35,31 @@ curve = SubResource( 1 )
 rotation = 1.5708
 
 [node name="AnimatedSprite" parent="PathLoop/PathFollow2D/Predator" index="0"]
-frame = 1
+frame = 4
 
 [node name="FishingRode" parent="." instance=ExtResource( 7 )]
 position = Vector2( 254.302, 300.771 )
 
 [node name="FisherRight" parent="." instance=ExtResource( 6 )]
 position = Vector2( 120.272, 461.702 )
-script = ExtResource( 8 )
 
 [node name="BigRock" parent="." instance=ExtResource( 9 )]
 position = Vector2( 195.543, 703.132 )
 
 [node name="BigRock2" parent="." instance=ExtResource( 9 )]
 position = Vector2( 190.498, 72.4594 )
+
+[node name="RiverFlow" parent="." instance=ExtResource( 8 )]
+position = Vector2( 194.094, 643.84 )
+
+[node name="RiverFlow2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 198.548, 422.007 )
+
+[node name="RiverFlow3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 192.312, 204.627 )
+
+[node name="RiverFlow4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 194.984, 38.0292 )
 
 [editable path="PathLoop"]
 [editable path="PathLoop/PathFollow2D/Predator"]
