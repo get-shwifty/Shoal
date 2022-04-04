@@ -1,8 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Map_Chunk/Spawner.gd" type="Script" id=1]
-[ext_resource path="res://Map_Chunk/Map_Chunk_5.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Map_Chunk/Map_Chunk_2.tscn" type="PackedScene" id=2]
 
 [node name="Spawner" type="Node2D"]
 script = ExtResource( 1 )
-scenes = [ ExtResource( 6 ) ]
+scenes = [ ExtResource( 2 ) ]

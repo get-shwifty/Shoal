@@ -2,6 +2,7 @@ extends Node2D
 
 signal end_game
 signal fish_added
+signal nb_fishes
 
 onready var fishes = $Fishes
 onready var target2CirclesLeft = $Target2CirclesLeft

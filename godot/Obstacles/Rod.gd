@@ -22,4 +22,4 @@ func _on_FishCatcher_fished(fish_list):
 		randomize()
 		$AudioStreamPlayer.stream = sounds[randi()%sounds.size()]
 		$AudioStreamPlayer.play()
-		print("yohohoho")
+		$AnimatedSprite.play("Fish")
