@@ -57,8 +57,8 @@ func select_chunk():
 		distance += random_scene.randi_range(-max_distance * randomness, max_distance*randomness)
 		if distance < 0:
 			distance = 0
-		if distance > max_distance:
-			distance = max_distance
+		if distance >= max_distance:
+			distance = max_distance - 1
 		var selected_level_index = floor(distance / (max_distance / len(other_chunks.keys())))
 		var selected_level = other_chunks.values()[selected_level_index]
 		return selected_level[random_scene.randi_range(0, selected_level.size() - 1)]

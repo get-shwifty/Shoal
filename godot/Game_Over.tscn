@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Minecraft.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Map_Chunk/PathLoop.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Obstacles/FisherRight.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Obstacles/Fisher.gd" type="Script" id=8]
+[ext_resource path="res://Obstacles/BigRock.tscn" type="PackedScene" id=9]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -41,11 +42,15 @@ align = 1
 [node name="FishingRode" parent="." instance=ExtResource( 3 )]
 position = Vector2( 104.014, 79.9231 )
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 4 )]
+[node name="SmallRock" parent="." instance=ExtResource( 4 )]
 position = Vector2( 219, 210 )
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 80, 128 )
+
+[node name="AnimatedSprite" parent="StaticBody2D2" index="0"]
+animation = "DiagRight"
+frame = 1
 
 [node name="FisherRight" parent="." instance=ExtResource( 7 )]
 position = Vector2( 206.073, 98.9008 )
@@ -64,4 +69,17 @@ rotation = 0.0245249
 rotation = 1.5708
 scale = Vector2( 1, 0.956772 )
 
+[node name="BigRock" parent="." instance=ExtResource( 9 )]
+position = Vector2( 294.531, 128.725 )
+
+[node name="AnimatedSprite" parent="BigRock" index="0"]
+animation = "DiagLeft"
+frame = 1
+
+[editable path="SmallRock"]
+[editable path="SmallRock/StunFishZone"]
+[editable path="StaticBody2D2"]
+[editable path="StaticBody2D2/StunFishZone"]
 [editable path="PathLoop"]
+[editable path="BigRock"]
+[editable path="BigRock/StunFishZone"]
