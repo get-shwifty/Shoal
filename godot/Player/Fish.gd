@@ -3,7 +3,7 @@ extends KinematicBody2D
 class_name Fish
 
 const SPEED = 140
-const DIZZY_SPEED = 80
+const DIZZY_SPEED = 140
 const ROTATION_SPEED = 15
 const KP = 0.4
 
@@ -40,10 +40,10 @@ func stun():
 	current_status = status.Stunned
 	animatedSprite.animation = "stun"
 	yield(get_tree().create_timer(0.5), "timeout")
-	current_status = status.Dizzy
+#	current_status = status.Dizzy
 	animatedSprite.animation = "swim"
-	animatedSprite.speed_scale = 0.5
-	yield(get_tree().create_timer(1.0), "timeout")
+#	animatedSprite.speed_scale = 0.5
+#	yield(get_tree().create_timer(1.0), "timeout")
 	current_status = status.Normal
 	animatedSprite.speed_scale = 1.0
 
