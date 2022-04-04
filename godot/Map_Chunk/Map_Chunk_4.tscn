@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Obstacles/Fish_Shoal.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Obstacles/FisherLeft.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Decors/RiverFlow.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Obstacles/BigRock.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Decors/Forst.tscn" type="PackedScene" id=9]
 
 [node name="Map_Chunk_4" type="Node2D"]
 position = Vector2( 2.74371, -0.252716 )
@@ -33,7 +34,7 @@ position = Vector2( 302.179, 564.82 )
 
 [node name="AnimatedSprite" parent="StaticBody2D4" index="0"]
 animation = "DiagRight"
-frame = 3
+frame = 0
 
 [node name="StaticBody2D5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 253.774, 610.534 )
@@ -80,6 +81,26 @@ scale = Vector2( 0.801409, 0.801409 )
 
 [node name="RiverFlow4" parent="." instance=ExtResource( 7 )]
 position = Vector2( 195.573, 31.5338 )
+
+[node name="Forest" parent="." instance=ExtResource( 9 )]
+position = Vector2( 45.7033, 413.83 )
+
+[node name="Forest3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 13.3896, 154.791 )
+rotation = -0.101397
+
+[node name="Forest5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 92.3196, -0.420528 )
+rotation = 0.697152
+scale = Vector2( 1, 1 )
+
+[node name="Forest2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 59.4763, 306.294 )
+rotation = 0.426596
+
+[node name="Forest4" parent="." instance=ExtResource( 9 )]
+position = Vector2( -7.7996, 628.371 )
+rotation = -0.101397
 
 [editable path="StaticBody2D4"]
 [editable path="StaticBody2D4/StunFishZone"]
