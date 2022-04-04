@@ -6,3 +6,7 @@ func _ready():
 	$VBox/Max_Of_Fishes/Number_Fishes.text = str(Global.max_of_fishes)
 	$VBox/Score/Score.text = str(Global.score)
 	
+
+
+func _on_Restart_pressed():
+	get_tree().change_scene("res://Main.tscn")
