@@ -33,7 +33,7 @@ position = Vector2( 302.179, 564.82 )
 
 [node name="AnimatedSprite" parent="StaticBody2D4" index="0"]
 animation = "DiagRight"
-frame = 3
+frame = 0
 
 [node name="StaticBody2D5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 253.774, 610.534 )

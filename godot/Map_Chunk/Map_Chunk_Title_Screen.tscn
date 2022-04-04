@@ -1,30 +1,28 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Obstacles/Big_Fish_Shoal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Obstacles/Rocks.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Minecraft.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Assets/GUI/Arrow up.png" type="Texture" id=6]
-[ext_resource path="res://Assets/GUI/Arrow down.png" type="Texture" id=7]
+[ext_resource path="res://Decors/RiverFlow.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Decors/Tree.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Decors/GroupTree.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Assets/GUI/Arrow right.png" type="Texture" id=8]
 [ext_resource path="res://Assets/GUI/Arrow left.png" type="Texture" id=9]
 [ext_resource path="res://Assets/GUI/Space.png.png" type="Texture" id=10]
 [ext_resource path="res://Assets/Font.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Assets/Minecraft.ttf" type="DynamicFontData" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
 outline_color = Color( 0.917647, 0.870588, 0.870588, 1 )
 extra_spacing_char = 16
-font_data = ExtResource( 5 )
+font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 15
 outline_color = Color( 0.917647, 0.870588, 0.870588, 1 )
-font_data = ExtResource( 5 )
-[ext_resource path="res://Decors/RiverFlow.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Decors/Tree.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Decors/GroupTree.tscn" type="PackedScene" id=7]
+font_data = ExtResource( 12 )
 
 [node name="Map_Chunk_Title_Screen" type="Node2D"]
 script = ExtResource( 4 )
@@ -95,7 +93,6 @@ text = "Move with"
 [node name="ArrowUp" type="Sprite" parent="Arrows"]
 position = Vector2( 321, 545 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 6 )
 
 [node name="ArrowLeft" type="Sprite" parent="Arrows"]
 position = Vector2( 297, 552 )
@@ -110,7 +107,6 @@ texture = ExtResource( 8 )
 [node name="ArrowDown" type="Sprite" parent="Arrows"]
 position = Vector2( 321, 557 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 7 )
 
 [node name="Formations" type="Node2D" parent="."]
 
@@ -138,7 +134,7 @@ position = Vector2( 194.175, 488.351 )
 position = Vector2( 196.012, 154.579 )
 
 [node name="GroupTree" parent="." instance=ExtResource( 7 )]
-position = Vector2( 105.992, 479.185 )
+position = Vector2( 104, 463 )
 
 [node name="GroupTree2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 107.478, 298.426 )
