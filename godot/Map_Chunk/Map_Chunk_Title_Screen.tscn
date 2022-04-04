@@ -42,8 +42,10 @@ position = Vector2( 152, 123 )
 [node name="SmallRock8" parent="." instance=ExtResource( 3 )]
 position = Vector2( 231, 123 )
 
-[node name="RiverFlow" parent="." instance=ExtResource( 5 )]
-position = Vector2( 195.308, 460.209 )
-
 [node name="RiverFlow2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 196.015, 336.466 )
+scale = Vector2( 1.69118, 0.249814 )
+
+[node name="RiverFlow3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 182.561, 486.566 )
+scale = Vector2( -1.691, 0.25 )
