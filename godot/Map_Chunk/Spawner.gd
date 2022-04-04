@@ -9,18 +9,19 @@ var current_position = Vector2.ZERO
 export var starting_chunks = [
 	preload("res://Map_Chunk/Map_Chunk_1.tscn")
 ]
-
+export var max_distance = 600
+export var randomness = 0.2
 export var other_chunks = {
 	"easy":[
-		preload("res://Map_Chunk/Map_Chunk_1.tscn"),
-		preload("res://Map_Chunk/Map_Chunk_2.tscn")
+		preload("res://Map_Chunk/Map_Chunk_5.tscn")
 	],
 	"medium": [
 		preload("res://Map_Chunk/Map_Chunk_3.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_4.tscn"),
 	],
 	"hard": [
-		preload("res://Map_Chunk/Map_Chunk_5.tscn")
+		preload("res://Map_Chunk/Map_Chunk_1.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_2.tscn")
 	]
 }
 var elapsed_chunks = 0
@@ -52,8 +53,13 @@ func select_chunk():
 	if elapsed_chunks < len(starting_chunks):
 		return starting_chunks[elapsed_chunks]
 	else:
-		var coeff = -movingCamera.get_distance_from_begin()
-		var selected_level_index = random_scene.randi_range(0, 2)
+		var distance = movingCamera.get_distance_from_begin()
+		distance += random_scene.randi_range(-max_distance * randomness, max_distance*randomness)
+		if distance < 0:
+			distance = 0
+		if distance > max_distance:
+			distance = max_distance
+		var selected_level_index = floor(distance / (max_distance / len(other_chunks.keys())))
 		var selected_level = other_chunks.values()[selected_level_index]
 		return selected_level[random_scene.randi_range(0, selected_level.size() - 1)]
 		

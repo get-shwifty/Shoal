@@ -33,7 +33,7 @@ curve = SubResource( 1 )
 rotation = 1.5708
 
 [node name="AnimatedSprite" parent="PathLoop/PathFollow2D/Predator" index="0"]
-frame = 2
+frame = 1
 
 [node name="FishingRode" parent="." instance=ExtResource( 7 )]
 position = Vector2( 254.302, 300.771 )
