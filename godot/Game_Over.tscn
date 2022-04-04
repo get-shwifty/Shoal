@@ -1,14 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Minecraft.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Obstacles/Rod.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Obstacles/FisherLeft.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Obstacles/Rocks.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Obstacles/Predator.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Map_Chunk/PathLoop.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Obstacles/FisherRight.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
 outline_color = Color( 0.101961, 0.121569, 0.180392, 1 )
 font_data = ExtResource( 2 )
+
+[sub_resource type="Curve2D" id=2]
+_data = {
+"points": PoolVector2Array( -33.6188, 0.353553, 33.6188, -0.353553, -62.9293, -49.7995, -3.7614, -31.6995, 3.7614, 31.6995, 23.584, 10.5218, 84.4426, 21.5223, -84.4426, -21.5223, -64.1198, 81.9548, -0.896447, 31.9442, 0.896447, -31.9442, -174.444, 2.58478, -79.622, -1.76878, 79.622, 1.76878, -62.9293, -49.7995 )
+}
 
 [node name="Game_Over" type="CanvasLayer"]
 
@@ -30,15 +38,28 @@ text = "Game over"
 align = 1
 
 [node name="FishingRode" parent="." instance=ExtResource( 3 )]
-position = Vector2( 207, 115 )
-rotation = 3.16777
-
-[node name="FishingRode2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 101, 82 )
-rotation = 0.0523599
+position = Vector2( 104.014, 79.9231 )
 
 [node name="StaticBody2D" parent="." instance=ExtResource( 4 )]
 position = Vector2( 219, 210 )
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 80, 128 )
+
+[node name="FisherRight" parent="." instance=ExtResource( 7 )]
+position = Vector2( 206.073, 98.9008 )
+
+[node name="PathLoop" parent="." instance=ExtResource( 6 )]
+position = Vector2( 237.424, 95.4153 )
+scale = Vector2( 1, 1.04518 )
+curve = SubResource( 2 )
+
+[node name="PathFollow2D" parent="PathLoop" index="0"]
+position = Vector2( -62.9293, -49.7995 )
+rotation = 0.0245259
+
+[node name="Predator" parent="PathLoop/PathFollow2D" index="0" instance=ExtResource( 5 )]
+rotation = 1.5708
+scale = Vector2( 1, 0.956772 )
+
+[editable path="PathLoop"]
