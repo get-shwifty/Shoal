@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
-[ext_resource path="res://Map_Chunk/PathLoop.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Obstacles/Generic/PathLoop.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Obstacles/Rocks.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Obstacles/Predator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=6]

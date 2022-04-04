@@ -1,8 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Obstacles/FisherRight.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Map_Chunk/PathLoop.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Obstacles/Generic/PathLoop.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Obstacles/Predator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Obstacles/Fish_Shoal.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=6]
@@ -12,6 +12,11 @@
 [ext_resource path="res://Decors/Tree.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Decors/GroupTree.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Decors/GroupTree2.tscn" type="PackedScene" id=12]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( -0.353553, -28.9914, 0.353553, 28.9914, -18, 20, 31.4663, 1.06066, -31.4663, -1.06066, -72, 60, -32.5269, 20.1525, 32.5269, -20.1525, -76, -38, 2.47487, -34.2947, -2.47487, 34.2947, -18, 20 )
+}
 
 [node name="Map_Chunk_6" type="Node2D"]
 script = ExtResource( 6 )
@@ -75,13 +80,14 @@ position = Vector2( 67, 311 )
 
 [node name="PathLoop" parent="." instance=ExtResource( 3 )]
 position = Vector2( 261, 132 )
+curve = SubResource( 1 )
 
 [node name="PathFollow2D" parent="PathLoop" index="0"]
-position = Vector2( -55, -30 )
-rotation = -0.0323225
+position = Vector2( -18, 20 )
+rotation = 1.59811
 
 [node name="Predator" parent="PathLoop/PathFollow2D" index="0" instance=ExtResource( 4 )]
-rotation = 1.60396
+rotation = 1.5708
 
 [node name="Fish_Shoal" parent="PathLoop" instance=ExtResource( 5 )]
 position = Vector2( -61, 5 )
