@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Obstacles/FisherRight.tscn" type="PackedScene" id=2]
@@ -12,10 +12,11 @@
 [ext_resource path="res://Decors/Tree.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Decors/GroupTree.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Decors/GroupTree2.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Decors/RiverFlow.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( -0.353553, -28.9914, 0.353553, 28.9914, -18, 20, 31.4663, 1.06066, -31.4663, -1.06066, -72, 60, -32.5269, 20.1525, 32.5269, -20.1525, -76, -38, 2.47487, -34.2947, -2.47487, 34.2947, -18, 20 )
+"points": PoolVector2Array( -2.3811, -20.4378, 2.3811, 20.4378, -15, 6, 47.9997, 14.059, -47.9997, -14.059, -76, 48, -48.0833, 8.48528, 48.0833, -8.48528, -64, -36, 1.43051e-06, -18.0312, -1.43051e-06, 18.0312, -15, 6 )
 }
 
 [node name="Map_Chunk_6" type="Node2D"]
@@ -79,15 +80,15 @@ position = Vector2( 35, 229 )
 position = Vector2( 67, 311 )
 
 [node name="PathLoop" parent="." instance=ExtResource( 3 )]
-position = Vector2( 261, 132 )
+position = Vector2( 257.421, 129 )
+scale = Vector2( 0.89471, 1 )
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" parent="PathLoop" index="0"]
-position = Vector2( -18, 20 )
-rotation = 1.59811
+position = Vector2( -15, 3 )
 
 [node name="Predator" parent="PathLoop/PathFollow2D" index="0" instance=ExtResource( 4 )]
-rotation = 1.5708
+rotation = 1.60396
 
 [node name="Fish_Shoal" parent="PathLoop" instance=ExtResource( 5 )]
 position = Vector2( -61, 5 )
@@ -96,19 +97,25 @@ position = Vector2( -61, 5 )
 position = Vector2( 164, 242 )
 
 [node name="Rapides" parent="Rapides" instance=ExtResource( 9 )]
-position = Vector2( 23, 1 )
+position = Vector2( 21.6636, -15.0362 )
 
 [node name="Rapides2" parent="Rapides" instance=ExtResource( 9 )]
 position = Vector2( 45, 1 )
 
 [node name="Rapides3" parent="Rapides" instance=ExtResource( 9 )]
-position = Vector2( 66, 2 )
+position = Vector2( 65.5546, -6.909 )
 
 [node name="Rapides4" parent="Rapides" instance=ExtResource( 9 )]
 position = Vector2( 86, 2 )
 
+[node name="RiverFlow" parent="Rapides" instance=ExtResource( 13 )]
+position = Vector2( 25.9077, 47.6788 )
+
+[node name="RiverFlow" parent="Rapides/RiverFlow" instance=ExtResource( 13 )]
+position = Vector2( 2.6727, 45.8814 )
+
 [node name="Rapides5" parent="Rapides" instance=ExtResource( 9 )]
-position = Vector2( -22, 1 )
+position = Vector2( -19.7727, 7.68173 )
 
 [node name="BigRock" parent="Rapides" instance=ExtResource( 8 )]
 position = Vector2( -10, -2 )

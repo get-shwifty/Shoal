@@ -24,26 +24,26 @@ margin_bottom = 40.0
 script = ExtResource( 2 )
 
 [node name="VBox" type="VBoxContainer" parent="."]
-margin_right = 47.0
+margin_right = 39.0
 margin_bottom = 25.0
 
 [node name="Max_Of_Fishes" type="HBoxContainer" parent="VBox"]
-margin_right = 47.0
+margin_right = 39.0
 margin_bottom = 6.0
 
 [node name="Text_Number_Fishes" type="Label" parent="VBox/Max_Of_Fishes"]
-margin_right = 40.0
+margin_right = 32.0
 margin_bottom = 6.0
 custom_colors/font_color = Color( 0.184314, 0.298039, 0.423529, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 custom_fonts/font = SubResource( 3 )
-text = "Max of fishes : "
+text = "Max Fishes : "
 align = 1
 valign = 1
 
 [node name="Number_Fishes" type="Label" parent="VBox/Max_Of_Fishes"]
-margin_left = 44.0
-margin_right = 47.0
+margin_left = 36.0
+margin_right = 39.0
 margin_bottom = 6.0
 custom_colors/font_color = Color( 0.184314, 0.298039, 0.423529, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
@@ -52,7 +52,7 @@ text = "0"
 
 [node name="Distance" type="HBoxContainer" parent="VBox"]
 margin_top = 10.0
-margin_right = 47.0
+margin_right = 39.0
 margin_bottom = 16.0
 
 [node name="Text_Distance" type="Label" parent="VBox/Distance"]
@@ -75,7 +75,7 @@ text = "0"
 
 [node name="Score" type="HBoxContainer" parent="VBox"]
 margin_top = 20.0
-margin_right = 47.0
+margin_right = 39.0
 margin_bottom = 25.0
 
 [node name="Text_Score" type="Label" parent="VBox/Score"]

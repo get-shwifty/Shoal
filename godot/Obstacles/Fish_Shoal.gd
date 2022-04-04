@@ -12,13 +12,11 @@ func _process(delta):
 	fishes.rotation_degrees -= ROTATION_SPEED * delta
 
 func _on_Area2D_body_entered(body):
-	$AudioStreamPlayer.play()
+	if not $AudioStreamPlayer.playing:
+		$AudioStreamPlayer.play()
 	call_deferred("add_fish", body)
 
 func add_fish(body):
-	print("before")
-	$AudioStreamPlayer.play()
-	print("after")
 	for child in fishes.get_children() :
 		var gp = child.global_position
 		fishes.remove_child(child)

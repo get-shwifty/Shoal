@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Obstacles/BigRock.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=6]
 [ext_resource path="res://Decors/Tree.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Decors/GroupTree2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Decors/RiverFlow.tscn" type="PackedScene" id=9]
 
 [node name="Map_Chunk_7" type="Node2D"]
 script = ExtResource( 6 )
@@ -49,19 +50,19 @@ position = Vector2( 337, 315.206 )
 position = Vector2( 384.251, 245.625 )
 
 [node name="Rapides" parent="." instance=ExtResource( 4 )]
-position = Vector2( 79, 150 )
+position = Vector2( 82.5636, 157.127 )
 
 [node name="Rapides2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 103, 150 )
 
 [node name="Rapides3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 126, 150 )
+position = Vector2( 127.336, 156.236 )
 
 [node name="Rapides4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 150, 150 )
+position = Vector2( 144.209, 133.518 )
 
 [node name="Rapides5" parent="." instance=ExtResource( 4 )]
-position = Vector2( 177, 150 )
+position = Vector2( 178.782, 150 )
 
 [node name="SmallRock" parent="." instance=ExtResource( 3 )]
 position = Vector2( 90, 137 )
@@ -86,3 +87,9 @@ position = Vector2( 119, 65 )
 
 [node name="GroupTree2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 27.2508, 235.625 )
+
+[node name="RiverFlow" parent="." instance=ExtResource( 9 )]
+position = Vector2( 166.744, 187.671 )
+
+[node name="RiverFlow2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 201.489, 312.397 )
