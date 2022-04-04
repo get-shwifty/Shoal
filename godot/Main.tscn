@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
@@ -7,12 +7,18 @@
 [ext_resource path="res://Assets/Sound/testeau_bruit.ogg" type="AudioStream" id=5]
 [ext_resource path="res://GUI.tscn" type="PackedScene" id=6]
 [ext_resource path="res://AnimatedObjects.gd" type="Script" id=7]
+[ext_resource path="res://Map_Chunk/Map_Chunk_1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Map_Chunk/Map_Chunk_2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Map_Chunk/Map_Chunk_4.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Map_Chunk/Map_Chunk_5.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Map_Chunk/Map_Chunk_3.tscn" type="PackedScene" id=12]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Spawner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1, 0 )
+scenes = [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 11 ) ]
 
 [node name="AnimatedObjects" type="Node2D" parent="."]
 position = Vector2( 0, -216 )
