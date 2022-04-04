@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Obstacles/Big_Fish_Shoal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Obstacles/Rocks.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=4]
+[ext_resource path="res://Decors/RiverFlow.tscn" type="PackedScene" id=5]
 
 [node name="Map_Chunk_Title_Screen" type="Node2D"]
 script = ExtResource( 4 )
@@ -40,3 +41,9 @@ position = Vector2( 152, 123 )
 
 [node name="SmallRock8" parent="." instance=ExtResource( 3 )]
 position = Vector2( 231, 123 )
+
+[node name="RiverFlow" parent="." instance=ExtResource( 5 )]
+position = Vector2( 195.308, 460.209 )
+
+[node name="RiverFlow2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 196.015, 336.466 )
