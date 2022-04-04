@@ -34,7 +34,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Rocks" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -8 )
@@ -45,5 +45,5 @@ shape = SubResource( 1 )
 position = Vector2( -0.176781, -5.12653 )
 frames = SubResource( 2 )
 animation = "Iddle1"
-frame = 1
+frame = 3
 playing = true
