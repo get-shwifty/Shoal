@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Obstacles/Fish_Shoal.tscn" type="PackedScene" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://Obstacles/FisherLeft.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Decors/RiverFlow.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Obstacles/BigRock.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Decors/GroupTree2.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Decors/Tree.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Decors/GroupTree.tscn" type="PackedScene" id=12]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -35,7 +38,7 @@ curve = SubResource( 1 )
 rotation = 1.5708
 
 [node name="AnimatedSprite" parent="PathLoop/PathFollow2D/Predator" index="0"]
-frame = 2
+frame = 3
 
 [node name="FishingRode" parent="." instance=ExtResource( 7 )]
 position = Vector2( 254.302, 300.771 )
@@ -57,6 +60,48 @@ position = Vector2( 198.548, 422.007 )
 
 [node name="RiverFlow4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 195.614, 160.242 )
+
+[node name="GroupTree2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 98.2508, 640.625 )
+
+[node name="GroupTree3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 121.251, 604.625 )
+
+[node name="GroupTree" parent="." instance=ExtResource( 12 )]
+position = Vector2( 270, 527.206 )
+
+[node name="GroupTree4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 305, 537.206 )
+
+[node name="GroupTree5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 281.251, 572.625 )
+
+[node name="Tree" parent="." instance=ExtResource( 11 )]
+position = Vector2( 287, 634 )
+
+[node name="GroupTree6" parent="." instance=ExtResource( 12 )]
+position = Vector2( 90, 383.206 )
+
+[node name="Tree2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 92, 359 )
+
+[node name="GroupTree7" parent="." instance=ExtResource( 10 )]
+position = Vector2( 354.251, 332.625 )
+
+[node name="GroupTree8" parent="." instance=ExtResource( 12 )]
+position = Vector2( 299, 368.206 )
+
+[node name="GroupTree9" parent="." instance=ExtResource( 10 )]
+position = Vector2( 108.251, 62.6254 )
+
+[node name="Tree3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 289, 210 )
+
+[node name="Tree4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 309, 204 )
+
+[node name="Tree5" parent="." instance=ExtResource( 11 )]
+position = Vector2( 295, 185 )
 
 [editable path="PathLoop"]
 [editable path="PathLoop/PathFollow2D/Predator"]
