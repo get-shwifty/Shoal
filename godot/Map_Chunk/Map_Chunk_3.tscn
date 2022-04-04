@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Obstacles/Fish_Shoal.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Obstacles/Rocks.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=4]
 [ext_resource path="res://Obstacles/FisherRight.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Obstacles/Fisher.gd" type="Script" id=6]
+[ext_resource path="res://Decors/RiverFlow.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Decors/Tree.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Decors/GroupTree.tscn" type="PackedScene" id=8]
 
 [node name="Map_Chunk_3" type="Node2D"]
 script = ExtResource( 4 )
@@ -27,4 +29,39 @@ position = Vector2( 186, 71 )
 
 [node name="FisherRight" parent="." instance=ExtResource( 5 )]
 position = Vector2( 48.0433, 154.557 )
-script = ExtResource( 6 )
+
+[node name="RiverFlow" parent="." instance=ExtResource( 6 )]
+position = Vector2( 203.018, 246.73 )
+
+[node name="RiverFlow2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 189.804, 40.4931 )
+
+[node name="GroupTree" parent="." instance=ExtResource( 8 )]
+position = Vector2( 270, 167.206 )
+
+[node name="Tree" parent="." instance=ExtResource( 7 )]
+position = Vector2( 130, 133 )
+
+[node name="Tree2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 56, 297 )
+
+[node name="Tree3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 73, 310 )
+
+[node name="GroupTree2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 45, 252.206 )
+
+[node name="GroupTree3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 81, 264.206 )
+
+[node name="Tree4" parent="." instance=ExtResource( 7 )]
+position = Vector2( 94, 33 )
+
+[node name="Tree5" parent="." instance=ExtResource( 7 )]
+position = Vector2( 77, 26 )
+
+[node name="Tree6" parent="." instance=ExtResource( 7 )]
+position = Vector2( 96, 15 )
+
+[node name="Tree" parent="Tree6" instance=ExtResource( 7 )]
+position = Vector2( 19, 10 )

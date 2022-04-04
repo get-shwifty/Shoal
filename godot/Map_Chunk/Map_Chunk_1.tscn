@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Map_Chunk/PathLoop.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Obstacles/Rocks.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Obstacles/Predator.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Decoration/trees.png" type="Texture" id=5]
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=6]
 [ext_resource path="res://Obstacles/FisherLeft.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Obstacles/BigRock.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Decors/RiverFlow.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Decors/Tree.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Decors/GroupTree.tscn" type="PackedScene" id=11]
 
 [node name="Map_Chunk_1" type="Node2D"]
 script = ExtResource( 6 )
@@ -30,43 +32,6 @@ position = Vector2( 254, 124 )
 [node name="StaticBody2D4" parent="." instance=ExtResource( 3 )]
 position = Vector2( 161, 292 )
 
-[node name="Trees" type="Sprite" parent="."]
-position = Vector2( 301.842, 131.131 )
-texture = ExtResource( 5 )
-offset = Vector2( 8.38293, -13.8735 )
-
-[node name="Trees3" type="Sprite" parent="."]
-position = Vector2( 129.882, 136.322 )
-rotation = 0.321288
-scale = Vector2( 0.992626, 1 )
-texture = ExtResource( 5 )
-offset = Vector2( 8.38293, -13.8735 )
-
-[node name="Trees6" type="Sprite" parent="."]
-position = Vector2( 118.412, 340.879 )
-rotation = 0.321288
-scale = Vector2( 1.08365, 1.0917 )
-texture = ExtResource( 5 )
-offset = Vector2( 8.38293, -13.8735 )
-
-[node name="Trees4" type="Sprite" parent="."]
-position = Vector2( 114.308, 287.814 )
-rotation = 0.321288
-scale = Vector2( 1.41005, 1.42053 )
-texture = ExtResource( 5 )
-offset = Vector2( 8.38293, -13.8735 )
-
-[node name="Trees5" type="Sprite" parent="."]
-position = Vector2( 105.504, 231.439 )
-rotation = 0.321288
-scale = Vector2( 1.08365, 1.0917 )
-texture = ExtResource( 5 )
-offset = Vector2( 8.38293, -13.8735 )
-
-[node name="Trees2" type="Sprite" parent="."]
-position = Vector2( 59, 62 )
-texture = ExtResource( 5 )
-
 [node name="FishingRode" parent="." instance=ExtResource( 7 )]
 position = Vector2( 238.272, 305.019 )
 
@@ -85,5 +50,38 @@ rotation = 1.5708
 
 [node name="BigRock" parent="." instance=ExtResource( 8 )]
 position = Vector2( 149.999, 68.3901 )
+
+[node name="RiverFlow" parent="." instance=ExtResource( 9 )]
+position = Vector2( 201.294, 236.48 )
+
+[node name="Tree" parent="." instance=ExtResource( 10 )]
+position = Vector2( 55, 132 )
+
+[node name="GroupTree" parent="." instance=ExtResource( 11 )]
+position = Vector2( 41, 89.2063 )
+
+[node name="Tree3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 89, 232 )
+
+[node name="GroupTree3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 97, 257 )
+
+[node name="GroupTree2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 100, 216.206 )
+
+[node name="Tree2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 132, 265 )
+
+[node name="Tree4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 134, 115 )
+
+[node name="Tree5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 139, 132 )
+
+[node name="Tree6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 339, 83 )
+
+[node name="GroupTree4" parent="." instance=ExtResource( 11 )]
+position = Vector2( 340, 30 )
 
 [editable path="PathLoop"]

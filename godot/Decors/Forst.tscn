@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Decoration/trees.png" type="Texture" id=1]
+[ext_resource path="res://Decors/Tree.tscn" type="PackedScene" id=2]
+
+[node name="Forest" type="Node2D"]
+
+[node name="Trees7" type="Sprite" parent="."]
+position = Vector2( -46.3032, 62.4537 )
+rotation = 0.321288
+scale = Vector2( 1.03058, 1.03824 )
+texture = ExtResource( 1 )
+offset = Vector2( 8.38293, -13.8735 )
+
+[node name="Trees6" type="Sprite" parent="."]
+position = Vector2( 7.41367, 139.064 )
+rotation = 0.321288
+scale = Vector2( 1.08365, 1.0917 )
+texture = ExtResource( 1 )
+offset = Vector2( 8.38293, -13.8735 )
+
+[node name="Trees4" type="Sprite" parent="."]
+position = Vector2( 3.30967, 85.9988 )
+rotation = 0.321288
+scale = Vector2( 1.41005, 1.42053 )
+texture = ExtResource( 1 )
+offset = Vector2( 8.38293, -13.8735 )
+
+[node name="Trees5" type="Sprite" parent="."]
+position = Vector2( -5.49434, 29.6238 )
+rotation = 0.321288
+scale = Vector2( 1.08365, 1.0917 )
+texture = ExtResource( 1 )
+offset = Vector2( 8.38293, -13.8735 )
+
+[node name="Tree3" parent="." instance=ExtResource( 2 )]
+position = Vector2( -14.1173, 108.255 )
+shadow = false
+
+[node name="Tree" parent="." instance=ExtResource( 2 )]
+position = Vector2( 11.9505, 67.4714 )
+shadow = false
+
+[node name="Tree2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 3.54153, 13.654 )
+shadow = false
+
+[node name="Tree5" parent="." instance=ExtResource( 2 )]
+position = Vector2( 38.8592, 153.663 )
+
+[node name="Tree6" parent="." instance=ExtResource( 2 )]
+position = Vector2( 11.1096, -31.3339 )

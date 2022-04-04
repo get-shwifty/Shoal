@@ -15,7 +15,8 @@ export var max_distance = 600
 export var randomness = 0.2
 export var other_chunks = {
 	"easy":[
-		preload("res://Map_Chunk/Map_Chunk_5.tscn")
+		preload("res://Map_Chunk/Map_Chunk_5.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_7.tscn")
 	],
 	"medium": [
 		preload("res://Map_Chunk/Map_Chunk_3.tscn"),
@@ -23,7 +24,8 @@ export var other_chunks = {
 	],
 	"hard": [
 		preload("res://Map_Chunk/Map_Chunk_1.tscn"),
-		preload("res://Map_Chunk/Map_Chunk_2.tscn")
+		preload("res://Map_Chunk/Map_Chunk_2.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_6.tscn")
 	]
 }
 var elapsed_chunks = 0
