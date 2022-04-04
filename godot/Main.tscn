@@ -1,12 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Camera/MovingCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
 [ext_resource path="res://Map_Chunk/Spawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Sound/river.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Sound/testeau_bruit.ogg" type="AudioStream" id=5]
-[ext_resource path="res://GUI.tscn" type="PackedScene" id=6]
-[ext_resource path="res://AnimatedObjects.gd" type="Script" id=7]
 [ext_resource path="res://Map_Chunk/Map_Chunk_1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Map_Chunk/Map_Chunk_2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Map_Chunk/Map_Chunk_4.tscn" type="PackedScene" id=10]
@@ -20,22 +18,7 @@ script = ExtResource( 2 )
 position = Vector2( 1, 0 )
 scenes = [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 10 ), ExtResource( 11 ) ]
 
-[node name="AnimatedObjects" type="Node2D" parent="."]
-position = Vector2( 0, -216 )
-script = ExtResource( 7 )
-
-[node name="Camera2D" type="Camera2D" parent="AnimatedObjects"]
-anchor_mode = 0
-current = true
-
-[node name="Player" parent="AnimatedObjects" instance=ExtResource( 1 )]
-position = Vector2( 192, 173 )
-
-[node name="GUI" parent="AnimatedObjects" instance=ExtResource( 6 )]
-margin_left = 6.0
-margin_top = 6.0
-margin_right = 162.0
-margin_bottom = 62.0
+[node name="MovingCamera" parent="." instance=ExtResource( 1 )]
 
 [node name="RiverPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
@@ -45,7 +28,3 @@ autoplay = true
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
-
-[connection signal="traveled_distance" from="AnimatedObjects" to="AnimatedObjects/GUI" method="_on_AnimatedObjects_traveled_distance"]
-[connection signal="end_game" from="AnimatedObjects/Player" to="." method="_on_Player_end_game"]
-[connection signal="nb_fishes" from="AnimatedObjects/Player" to="AnimatedObjects/GUI" method="_on_Player_nb_fishes"]

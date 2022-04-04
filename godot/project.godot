@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Fish",
 "language": "GDScript",
 "path": "res://Player/Fish.gd"
+}, {
+"base": "Node2D",
+"class": "MovingCamera",
+"language": "GDScript",
+"path": "res://Camera/MovingCamera.gd"
 } ]
 _global_script_class_icons={
-"Fish": ""
+"Fish": "",
+"MovingCamera": ""
 }
 
 [application]
@@ -70,6 +76,7 @@ change_formation={
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="AloneFishes"
+2d_physics/layer_9="CameraControl"
 
 [physics]
 

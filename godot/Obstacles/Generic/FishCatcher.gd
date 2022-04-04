@@ -18,10 +18,8 @@ func _ready():
 
 func stop_fish(fish: Fish):
 	var temp_pos = fish.global_position
+	fish.disable()
 	fish.get_parent().remove_child(fish)
-	fish.set_collision_layer_bit(1,0)
-	fish.set_collision_mask_bit(1,0)
-	fish.target_pos = null
 	add_child(fish)
 	fish.global_position = temp_pos
 	
@@ -38,6 +36,7 @@ func catch_fish(body):
 
 func _on_Timer_timeout():
 	for fish in fished:
-		fish.queue_free()
+		if not fish.is_queued_for_deletion():
+			fish.queue_free()
 	is_active = false
 	emit_signal("fished", fished)

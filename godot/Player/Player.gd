@@ -7,8 +7,6 @@ signal nb_fishes
 onready var fishes = $Fishes
 onready var target2CirclesLeft = $Target2CirclesLeft
 onready var target2CirclesRight = $Target2CirclesRight
-onready var camera = get_tree().get_root().get_node("Main/AnimatedObjects")
-onready var camera_position_init = camera.global_position.y
 onready var screen_size = get_viewport_rect().size
 
 var direction = Vector2.ZERO
@@ -24,10 +22,9 @@ enum Pattern {
 	VERTICAL
 }
 
-
 func _physics_process(delta):
 	# Player
-
+	
 	direction = get_direction()
 	velocity = direction * SPEED
 	translate(velocity * delta)
@@ -50,9 +47,6 @@ func _physics_process(delta):
 				set_target_pos_two_circles(children)
 				if Input.is_action_just_pressed("change_formation"):
 					current_pattern = Pattern.CIRCLE
-	for fish in children:
-		if fish.global_position.y > (camera.global_position.y - camera_position_init):
-			fish.queue_free()
 	
 	if children.size() == 0 :
 		emit_signal("end_game")

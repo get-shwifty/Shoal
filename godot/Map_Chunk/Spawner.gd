@@ -5,19 +5,18 @@ export (Array, PackedScene) var scenes
 var random_scene = RandomNumberGenerator.new()
 var selected_scene_index = 0
 var current_position = Vector2.ZERO
-var chunks
 
-onready var camera = get_tree().get_root().get_node("Main/AnimatedObjects")
+onready var movingCamera = get_node("../MovingCamera")
 
 func _ready():
 	random_scene.randomize()
 	add_chunk()
 	add_chunk()
 
-func _process(_delta):
-	chunks = self.get_children()
+func _physics_process(_delta):
+	var last_chunk = get_child(get_child_count() - 1)
 	
-	if(chunks[chunks.size()-1].global_position.y > camera.global_position.y - 10):
+	if last_chunk.global_position.y > (movingCamera.global_position.y - 100):
 		drop_chunk()
 		add_chunk()
 
@@ -31,5 +30,4 @@ func add_chunk():
 	add_child(new_scene)
 	
 func drop_chunk():
-	chunks[0].queue_free()
-
+	get_child(0).queue_free()

@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Camera/MovingCamera.gd" type="Script" id=2]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 194, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 194, 110 )
+
+[node name="MovingCamera" type="Node2D"]
+position = Vector2( 0, -216 )
+script = ExtResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 192, 173 )
+
+[node name="CameraControlTrigger" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 256
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraControlTrigger"]
+position = Vector2( 192, 8 )
+shape = SubResource( 1 )
+
+[node name="OutsideCameraArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OutsideCameraArea"]
+position = Vector2( 192, 108 )
+shape = SubResource( 2 )
+
+[node name="GUI" parent="." instance=ExtResource( 5 )]
+
+[connection signal="traveled_distance" from="." to="GUI" method="_on_MovingCamera_traveled_distance"]
+[connection signal="nb_fishes" from="Player" to="GUI" method="_on_Player_nb_fishes"]
+[connection signal="area_entered" from="CameraControlTrigger" to="." method="_on_CameraControlTrigger_area_entered"]
+[connection signal="body_exited" from="OutsideCameraArea" to="." method="_on_OutsideCameraArea_body_exited"]

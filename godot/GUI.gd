@@ -15,7 +15,7 @@ func display_scores():
 	numberFishesTextNode.text = str(max_of_fishes)
 	ScoreTextNode.text = str(score)
 
-func _on_AnimatedObjects_traveled_distance(distance):
+func _on_MovingCamera_traveled_distance(distance):
 	var diff = int(distance - traveled_distance)
 	if diff > 0:
 		traveled_distance += diff

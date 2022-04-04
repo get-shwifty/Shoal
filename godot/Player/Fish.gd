@@ -8,6 +8,7 @@ const KP = 0.05
 
 onready var pivot = $Pivot
 
+var disabled = false
 
 enum status {
 	Normal,
@@ -83,3 +84,9 @@ func _process(delta):
 		dizzy_process(delta)
 	else:
 		print("incorrect fish status")
+
+func disable():
+	disabled = true
+	collision_layer = 0
+	collision_mask = 0
+	target_pos = null
