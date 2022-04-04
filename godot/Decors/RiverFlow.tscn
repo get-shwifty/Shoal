@@ -33,6 +33,7 @@ animations = [ {
 [node name="RiverFlow" type="Node2D"]
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 1.691, 0.25 )
 frames = SubResource( 6 )
-frame = 2
+frame = 3
 playing = true

@@ -43,9 +43,13 @@ position = Vector2( 152, 123 )
 position = Vector2( 231, 123 )
 
 [node name="RiverFlow2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 196.015, 336.466 )
-scale = Vector2( 1.69118, 0.249814 )
+position = Vector2( 196.16, 331.051 )
+scale = Vector2( 0.8, 1 )
 
 [node name="RiverFlow3" parent="." instance=ExtResource( 5 )]
-position = Vector2( 182.561, 486.566 )
-scale = Vector2( -1.691, 0.25 )
+position = Vector2( 199.229, 487.756 )
+scale = Vector2( 0.9, 1 )
+
+[node name="RiverFlow4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 196.054, 144.089 )
+scale = Vector2( 0.7, 1 )
