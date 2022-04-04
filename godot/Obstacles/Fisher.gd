@@ -22,7 +22,10 @@ func _on_FishCatcher_fished(fish_list):
 	if len(fish_list) > 0:
 		$AudioStreamPlayer.stream = splash
 		$AudioStreamPlayer.play()
-		$AnimatedSprite.play("Fish")
+		if $AnimatedSprite.animation == "Iddle":
+			$AnimatedSprite.play("Fish")
+		else:
+			$AnimatedSprite.play("FishReverse")
 
 
 func _on_AnimatedSprite_animation_finished():

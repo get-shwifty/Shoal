@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Map_Chunk/PathLoop.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=6]
 [ext_resource path="res://Obstacles/FisherLeft.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Obstacles/BigRock.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Decors/RiverFlow.tscn" type="PackedScene" id=9]
 
 [node name="Map_Chunk_1" type="Node2D"]
 script = ExtResource( 6 )
@@ -81,5 +82,8 @@ rotation = 1.5708
 
 [node name="BigRock" parent="." instance=ExtResource( 8 )]
 position = Vector2( 149.999, 68.3901 )
+
+[node name="RiverFlow" parent="." instance=ExtResource( 9 )]
+position = Vector2( 201.294, 236.48 )
 
 [editable path="PathLoop"]

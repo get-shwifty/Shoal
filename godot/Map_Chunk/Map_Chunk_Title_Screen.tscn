@@ -22,6 +22,7 @@ font_data = ExtResource( 5 )
 size = 15
 outline_color = Color( 0.917647, 0.870588, 0.870588, 1 )
 font_data = ExtResource( 5 )
+[ext_resource path="res://Decors/RiverFlow.tscn" type="PackedScene" id=5]
 
 [node name="Map_Chunk_Title_Screen" type="Node2D"]
 script = ExtResource( 4 )
@@ -124,3 +125,12 @@ text = "Split with"
 position = Vector2( 321, 545 )
 scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 10 )
+
+[node name="RiverFlow2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 195.268, 328.97 )
+
+[node name="RiverFlow3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 194.175, 488.351 )
+
+[node name="RiverFlow4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 196.012, 154.579 )

@@ -5,7 +5,7 @@
 [ext_resource path="res://Obstacles/Rocks.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Map_Chunk/Map_Chunk.gd" type="Script" id=4]
 [ext_resource path="res://Obstacles/FisherRight.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Obstacles/Fisher.gd" type="Script" id=6]
+[ext_resource path="res://Decors/RiverFlow.tscn" type="PackedScene" id=6]
 
 [node name="Map_Chunk_3" type="Node2D"]
 script = ExtResource( 4 )
@@ -27,4 +27,9 @@ position = Vector2( 186, 71 )
 
 [node name="FisherRight" parent="." instance=ExtResource( 5 )]
 position = Vector2( 48.0433, 154.557 )
-script = ExtResource( 6 )
+
+[node name="RiverFlow" parent="." instance=ExtResource( 6 )]
+position = Vector2( 203.018, 246.73 )
+
+[node name="RiverFlow2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 189.804, 40.4931 )
