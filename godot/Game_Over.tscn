@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Minecraft.ttf" type="DynamicFontData" id=2]
@@ -7,9 +7,12 @@
 [ext_resource path="res://Obstacles/Predator.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Map_Chunk/PathLoop.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Obstacles/FisherRight.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Decors/GroupTree.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Obstacles/BigRock.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/Font.tres" type="DynamicFont" id=10]
 [ext_resource path="res://Game_Over.gd" type="Script" id=11]
+[ext_resource path="res://Decors/Tree.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Decors/GroupTree2.tscn" type="PackedScene" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -50,14 +53,12 @@ position = Vector2( 104.014, 79.9231 )
 [node name="SmallRock" parent="." instance=ExtResource( 4 )]
 position = Vector2( 219, 210 )
 
-[node name="AnimatedSprite" parent="SmallRock" index="0"]
-frame = 3
-
 [node name="StaticBody2D2" parent="." instance=ExtResource( 4 )]
 position = Vector2( 80, 128 )
 
 [node name="AnimatedSprite" parent="StaticBody2D2" index="0"]
 animation = "DiagRight"
+frame = 1
 
 [node name="FisherRight" parent="." instance=ExtResource( 7 )]
 position = Vector2( 206.073, 98.9008 )
@@ -80,7 +81,7 @@ position = Vector2( 294.531, 128.725 )
 
 [node name="AnimatedSprite" parent="BigRock" index="0"]
 animation = "DiagLeft"
-frame = 2
+frame = 3
 
 [node name="VBox" type="VBoxContainer" parent="."]
 anchor_left = 0.5
@@ -198,6 +199,42 @@ margin_bottom = 15.0
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 10 )
 text = "Retry"
+
+[node name="GroupTree" parent="." instance=ExtResource( 8 )]
+position = Vector2( 331, 127 )
+
+[node name="GroupTree5" parent="." instance=ExtResource( 13 )]
+position = Vector2( 365, -5 )
+
+[node name="GroupTree4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 36, 152 )
+
+[node name="GroupTree3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 379, 94 )
+
+[node name="GroupTree2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 19, 64 )
+
+[node name="GroupTree6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 36, 11 )
+
+[node name="GroupTree" parent="GroupTree6" instance=ExtResource( 8 )]
+position = Vector2( 38, -18 )
+
+[node name="Tree6" parent="GroupTree6/GroupTree" instance=ExtResource( 12 )]
+position = Vector2( 185, 24 )
+
+[node name="Tree7" parent="GroupTree6/GroupTree" instance=ExtResource( 12 )]
+position = Vector2( 206, 31 )
+
+[node name="Tree8" parent="GroupTree6/GroupTree" instance=ExtResource( 12 )]
+position = Vector2( 233, 82 )
+
+[node name="Tree9" parent="GroupTree6/GroupTree" instance=ExtResource( 12 )]
+position = Vector2( 78, 102 )
+
+[node name="Tree" parent="GroupTree6/GroupTree/Tree9" instance=ExtResource( 12 )]
+position = Vector2( 10, 24 )
 
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
 
