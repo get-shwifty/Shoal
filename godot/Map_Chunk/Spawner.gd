@@ -16,7 +16,8 @@ export var randomness = 0.2
 export var other_chunks = {
 	"easy":[
 		preload("res://Map_Chunk/Map_Chunk_5.tscn"),
-		preload("res://Map_Chunk/Map_Chunk_7.tscn")
+		preload("res://Map_Chunk/Map_Chunk_7.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_8.tscn")
 	],
 	"medium": [
 		preload("res://Map_Chunk/Map_Chunk_3.tscn"),
