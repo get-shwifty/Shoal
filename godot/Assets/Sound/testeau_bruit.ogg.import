@@ -11,5 +11,5 @@ dest_files=[ "res://.import/testeau_bruit.ogg-d7b0209c4e5246f2025f34a09724dc5f.o
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
