@@ -3,7 +3,6 @@ extends KinematicBody2D
 class_name Fish
 
 const SPEED = 140
-const DIZZY_SPEED = 140
 const ROTATION_SPEED = 20
 const KP = 0.05
 
@@ -15,15 +14,12 @@ var next_to_fish = 0
 
 enum status {
 	Normal,
-	Stunned,
-	Dizzy,
+	Stunned
 }
 var target_pos = null
 var velocity = Vector2.ZERO
 var velocity_debuff = 1
 var current_status = status.Normal
-var stun_timer = -1
-var dizzy_timer = -1
 
 onready var old_position = global_position
 var delta_pos = Vector2.ZERO
@@ -39,22 +35,17 @@ func stun():
 	current_status = status.Stunned
 	animatedSprite.animation = "stun"
 	yield(get_tree().create_timer(0.5), "timeout")
-#	current_status = status.Dizzy
 	animatedSprite.animation = "swim"
-#	animatedSprite.speed_scale = 0.5
-#	yield(get_tree().create_timer(1.0), "timeout")
 	current_status = status.Normal
-	animatedSprite.speed_scale = 1.0
 
 func _physics_process(delta):
 	if current_status != status.Stunned:
 		delta_pos = global_position - old_position
+		global_position -= delta_pos * (1.0 - velocity_debuff)
 		old_position = global_position
 
 		if target_pos != null:
 			var speed = SPEED
-			if current_status == status.Dizzy:
-				speed = DIZZY_SPEED
 			
 			var direction = target_pos - position
 			velocity = direction.normalized() * pow(direction.length() * KP, 2) * speed
