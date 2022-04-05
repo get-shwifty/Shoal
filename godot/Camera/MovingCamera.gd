@@ -10,9 +10,8 @@ enum ControlType {
 	PAUSE
 }
 
-export(int) var CAMERA_SPEED = 80
 export(int) var MIN_CAMERA_SPEED = 60
-export(int) var MAX_CAMERA_SPEED = 140
+export(int) var MAX_CAMERA_SPEED = 180
 export(int) var DISTANCE_MAX_SPEED = 1500
 
 const ACCELERATION = 5
