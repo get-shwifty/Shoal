@@ -1,20 +1,16 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Camera/MovingCamera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Main.gd" type="Script" id=2]
 [ext_resource path="res://Map_Chunk/Spawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Sound/river.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Assets/Sound/testeau_bruit.ogg" type="AudioStream" id=5]
-[ext_resource path="res://Map_Chunk/Map_Chunk_Title_Screen.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Map_Chunk/Map_Chunk_1.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Spawner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1, 0 )
-scenes = [ ExtResource( 7 ) ]
-starting_chunks = [ ExtResource( 6 ) ]
 
 [node name="MovingCamera" parent="." instance=ExtResource( 1 )]
 

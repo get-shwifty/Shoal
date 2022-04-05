@@ -1,32 +1,43 @@
 extends Node2D
 
-export (Array, PackedScene) var scenes
-
 var random_scene = RandomNumberGenerator.new()
 var selected_scene_index = 0
 var current_position = Vector2.ZERO
 
 export var starting_chunks = [
-	preload("res://Map_Chunk/Map_Chunk_5.tscn"),
-	preload("res://Map_Chunk/Map_Chunk_1.tscn"), 
-	preload("res://Map_Chunk/Map_Chunk_4.tscn")
+	preload("res://Map_Chunk/Map_Chunk_Title_Screen.tscn"),
+	preload("res://Map_Chunk/Map_Chunk_1.tscn")
 ]
 export var max_distance = 600
 export var randomness = 0.2
 export var other_chunks = {
 	"easy":[
-		preload("res://Map_Chunk/Map_Chunk_5.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_2.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_3.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_4.tscn"),
+#		preload("res://Map_Chunk/Map_Chunk_5.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_6.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_7.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_8.tscn")
 	],
 	"medium": [
+		preload("res://Map_Chunk/Map_Chunk_2.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_3.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_4.tscn"),
+#		preload("res://Map_Chunk/Map_Chunk_5.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_6.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_7.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_8.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_Boss_1.tscn"),
 	],
 	"hard": [
-		preload("res://Map_Chunk/Map_Chunk_1.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_2.tscn"),
-		preload("res://Map_Chunk/Map_Chunk_6.tscn")
+		preload("res://Map_Chunk/Map_Chunk_3.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_4.tscn"),
+#		preload("res://Map_Chunk/Map_Chunk_5.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_6.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_7.tscn"),
+		preload("res://Map_Chunk/Map_Chunk_8.tscn")
 	]
 }
 var elapsed_chunks = 0
@@ -36,13 +47,13 @@ onready var movingCamera = get_node("../MovingCamera")
 func _ready():
 	random_scene.randomize()
 	add_chunk()
-	add_chunk()
 
 func _physics_process(_delta):
 	var last_chunk = get_child(get_child_count() - 1)
 	
 	if last_chunk.global_position.y > (movingCamera.global_position.y - 100):
-		drop_chunk()
+		if get_child_count() >= 2:
+			drop_chunk()
 		add_chunk()
 
 func add_chunk():
