@@ -28,10 +28,12 @@ func _physics_process(delta):
 	
 	if children.size() > 0:
 		var nearest_fish_dist = 1000000000.0
+		var nearest_fish = null
 		for child in fishes.get_children():
 			var dist = (child.position - target.position).length()
 			if dist < nearest_fish_dist:
 				nearest_fish_dist = dist
+				nearest_fish = child.position
 
 		var factor = 1.0
 		if nearest_fish_dist < 5:
@@ -42,6 +44,8 @@ func _physics_process(delta):
 		target.translate(velocity * delta)
 		target.position.x = clamp(target.position.x, 0, screen_size.x)
 		target.position.y = clamp(target.position.y, 0, screen_size.y)
+		target.position.x = clamp(target.position.x, nearest_fish.x - 30, nearest_fish.x + 30)
+		target.position.y = clamp(target.position.y, nearest_fish.y - 30, nearest_fish.y + 30)
 
 		emit_signal("nb_fishes", children.size())
 

@@ -8,9 +8,9 @@
 script = ExtResource( 1 )
 
 [node name="Target" type="Position2D" parent="."]
-visible = false
 
 [node name="Sprite" type="Sprite" parent="Target"]
+visible = false
 scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 3 )
 
@@ -31,12 +31,6 @@ visible = false
 modulate = Color( 0.647059, 0.0117647, 0.0117647, 1 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 3 )
-
-[node name="TargetHorizontalLeft" type="Position2D" parent="Target"]
-position = Vector2( -45, 0 )
-
-[node name="TargetHorizontalRight" type="Position2D" parent="Target"]
-position = Vector2( 45, 0 )
 
 [node name="Fishes" type="Node2D" parent="."]
 
