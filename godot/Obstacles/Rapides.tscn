@@ -42,7 +42,7 @@ script = ExtResource( 1 )
 position = Vector2( -1.52588e-05, -0.629974 )
 frames = SubResource( 2 )
 animation = "Iddle"
-frame = 3
+frame = 4
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

@@ -17,7 +17,7 @@ func _ready():
 
 
 func _on_Area2D_body_entered(fish: Fish):
-	fish.velocity_debuff = 0.25
+	fish.velocity_debuff = 0.3
 
 
 func _on_Area2D_body_exited(fish: Fish):
