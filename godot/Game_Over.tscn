@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Assets/Minecraft.ttf" type="DynamicFontData" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Game_Over.gd" type="Script" id=11]
 [ext_resource path="res://Decors/Tree.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Decors/GroupTree2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Assets/Sound/river.ogg" type="AudioStream" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -235,6 +236,11 @@ position = Vector2( 78, 102 )
 
 [node name="Tree" parent="GroupTree6/GroupTree/Tree9" instance=ExtResource( 12 )]
 position = Vector2( 10, 24 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -20.0
+autoplay = true
 
 [connection signal="pressed" from="Restart" to="." method="_on_Restart_pressed"]
 
