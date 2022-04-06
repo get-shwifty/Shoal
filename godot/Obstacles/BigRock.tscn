@@ -23,45 +23,25 @@ region = Rect2( 192, 256, 64, 64 )
 atlas = ExtResource( 2 )
 region = Rect2( 256, 256, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 0, 64, 64 )
+region = Rect2( 0, 192, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 0, 64, 64 )
+region = Rect2( 64, 192, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 2 )
-region = Rect2( 128, 0, 64, 64 )
+region = Rect2( 128, 192, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 2 )
-region = Rect2( 192, 0, 64, 64 )
+region = Rect2( 192, 192, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 2 )
-region = Rect2( 256, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 2 )
-region = Rect2( 0, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 2 )
-region = Rect2( 64, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 2 )
-region = Rect2( 128, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 2 )
-region = Rect2( 192, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 2 )
-region = Rect2( 256, 64, 64, 64 )
+region = Rect2( 256, 192, 64, 64 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 2 )
@@ -83,25 +63,45 @@ region = Rect2( 192, 128, 64, 64 )
 atlas = ExtResource( 2 )
 region = Rect2( 256, 128, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 192, 64, 64 )
+region = Rect2( 0, 64, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
-region = Rect2( 64, 192, 64, 64 )
+region = Rect2( 64, 64, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
-region = Rect2( 128, 192, 64, 64 )
+region = Rect2( 128, 64, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
-region = Rect2( 192, 192, 64, 64 )
+region = Rect2( 192, 64, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=25]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
-region = Rect2( 256, 192, 64, 64 )
+region = Rect2( 256, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 256, 0, 64, 64 )
 
 [sub_resource type="SpriteFrames" id=26]
 animations = [ {
@@ -110,14 +110,9 @@ animations = [ {
 "name": "DiagLeft",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
 "loop": true,
-"name": "Right",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
-"loop": true,
-"name": "DiagRight",
+"name": "Left",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
@@ -125,14 +120,19 @@ animations = [ {
 "name": "Front",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
-"name": "Left",
+"name": "DiagRight",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "Right",
 "speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=27]
-radius = 11.2432
+radius = 7.7025
 
 [node name="BigRock" instance=ExtResource( 1 )]
 
@@ -140,16 +140,11 @@ radius = 11.2432
 frames = SubResource( 26 )
 frame = 0
 
-[node name="CollisionShape2D" parent="." index="1"]
-position = Vector2( -0.334087, -11.0068 )
-rotation = -1.57079
-scale = Vector2( 2.39333, -2.41685 )
-
-[node name="StunFishZone" parent="." index="2"]
+[node name="StunFishZone" parent="." index="1"]
 position = Vector2( 46.104, -10.7841 )
 
 [node name="CollisionShape2D" parent="StunFishZone" index="0"]
-position = Vector2( -105.119, 0.951637 )
+position = Vector2( -106.595, 9.36303 )
 scale = Vector2( 2.18181, 2.5917 )
 shape = SubResource( 27 )
 

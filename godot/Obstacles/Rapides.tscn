@@ -37,12 +37,13 @@ extents = Vector2( 31.183, 106.463 )
 
 [node name="Rapides" type="Node2D"]
 script = ExtResource( 1 )
+debuff = 0.4
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -1.52588e-05, -0.629974 )
 frames = SubResource( 2 )
 animation = "Iddle"
-frame = 2
+frame = 4
 playing = true
 
 [node name="Area2D" type="Area2D" parent="."]

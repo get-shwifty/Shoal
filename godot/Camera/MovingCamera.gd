@@ -12,7 +12,7 @@ enum ControlType {
 
 export(int) var MIN_CAMERA_SPEED = 60
 export(int) var MAX_CAMERA_SPEED = 180
-export(int) var DISTANCE_MAX_SPEED = 1500
+export(int) var DISTANCE_MAX_SPEED = 1800
 
 const ACCELERATION = 5
 var velocity = 0

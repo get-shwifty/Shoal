@@ -3,15 +3,18 @@ extends Node2D
 var random_scene = RandomNumberGenerator.new()
 var selected_scene_index = 0
 var current_position = Vector2.ZERO
+var last_chunk
 
 export var starting_chunks = [
 	preload("res://Map_Chunk/Map_Chunk_Title_Screen.tscn"),
+	preload("res://Map_Chunk/Map_Chunk_9.tscn"),
 	preload("res://Map_Chunk/Map_Chunk_1.tscn")
 ]
 export var max_distance = 600
 export var randomness = 0.2
 export var other_chunks = {
 	"easy":[
+		preload("res://Map_Chunk/Map_Chunk_1.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_2.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_3.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_4.tscn"),
@@ -21,6 +24,7 @@ export var other_chunks = {
 		preload("res://Map_Chunk/Map_Chunk_8.tscn")
 	],
 	"medium": [
+		preload("res://Map_Chunk/Map_Chunk_1.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_2.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_3.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_4.tscn"),
@@ -31,6 +35,7 @@ export var other_chunks = {
 		preload("res://Map_Chunk/Map_Chunk_Boss_1.tscn"),
 	],
 	"hard": [
+		preload("res://Map_Chunk/Map_Chunk_1.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_2.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_3.tscn"),
 		preload("res://Map_Chunk/Map_Chunk_4.tscn"),
@@ -69,15 +74,22 @@ func select_chunk():
 	if elapsed_chunks < len(starting_chunks):
 		return starting_chunks[elapsed_chunks]
 	else:
-		var distance = movingCamera.get_distance_from_begin()
-		distance += random_scene.randi_range(-max_distance * randomness, max_distance*randomness)
-		if distance < 0:
-			distance = 0
-		if distance >= max_distance:
-			distance = max_distance - 1
-		var selected_level_index = floor(distance / (max_distance / len(other_chunks.keys())))
-		var selected_level = other_chunks.values()[selected_level_index]
-		return selected_level[random_scene.randi_range(0, selected_level.size() - 1)]
+		var selected = randomize_chunk()
+		while selected == last_chunk:
+			selected = randomize_chunk()
+		last_chunk = selected
+		return selected
 		
+func randomize_chunk():
+	var distance = movingCamera.get_distance_from_begin()
+	distance += random_scene.randi_range(-max_distance * randomness, max_distance*randomness)
+	if distance < 0:
+		distance = 0
+	if distance >= max_distance:
+		distance = max_distance - 1
+	var selected_level_index = floor(distance / (max_distance / len(other_chunks.keys())))
+	var selected_level = other_chunks.values()[selected_level_index]
+	return selected_level[random_scene.randi_range(0, selected_level.size() - 1)]
+	
 func drop_chunk():
 	get_child(0).queue_free()

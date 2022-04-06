@@ -181,5 +181,6 @@ SPEED = 30
 [node name="Predator" parent="PathNoLoop/PathFollow2D" index="0" instance=ExtResource( 14 )]
 position = Vector2( 2, 0 )
 rotation = 1.5708
+fade_in = true
 
 [editable path="PathNoLoop"]
