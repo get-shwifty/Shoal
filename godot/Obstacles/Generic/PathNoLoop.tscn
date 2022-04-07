@@ -4,16 +4,21 @@
 
 [sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100 )
+"points": PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2.43677, 12.8626, 0, 0, 0, 0, 3.9233, 185.2 )
 }
 
 [node name="PathNoLoop" type="Path2D"]
 curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="."]
-rotation = 1.5708
+rotation = 1.38357
 loop = false
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="PathFollow2D" method="_on_Timer_timeout"]

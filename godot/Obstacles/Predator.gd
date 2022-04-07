@@ -1,5 +1,6 @@
 extends Node2D
 export var fade_in = false
+export var fade_delay = 3
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -9,7 +10,7 @@ export var fade_in = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if fade_in:
-		$Tween.interpolate_property($AnimatedSprite, "modulate", Color(1,1,1,0), Color(1,1,1,1),3, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		$Tween.interpolate_property($AnimatedSprite, "modulate", Color(1,1,1,0), Color(1,1,1,1),fade_delay, Tween.TRANS_LINEAR, Tween.EASE_IN, 2)
 		$Tween.start()
 		
 
