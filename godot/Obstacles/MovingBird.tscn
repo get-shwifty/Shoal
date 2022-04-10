@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Obstacles/Generic/PathNoLoop.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Obstacles/Bird.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Obstacles/MovingPredator.gd" type="Script" id=3]
+
+[node name="MovingBird" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="PathNoLoop" parent="." instance=ExtResource( 1 )]
+rotation = 1.57378
+
+[node name="PathFollow2D" parent="PathNoLoop" index="0"]
+SPEED = 100
+
+[node name="Bird" parent="PathNoLoop/PathFollow2D" index="0" instance=ExtResource( 2 )]
+rotation = 3.14159
+
+[node name="Timer" parent="PathNoLoop" index="1"]
+wait_time = 0.1
+
+[editable path="PathNoLoop"]
+[editable path="PathNoLoop/PathFollow2D/Bird"]

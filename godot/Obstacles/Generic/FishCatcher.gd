@@ -15,7 +15,7 @@ export var max_fish = 3
 func _ready():
 	pass # Replace with function body.
 
-func stop_fish(fish: Fish):
+func _stop_fish(fish: Fish):
 	var temp_pos = fish.global_position
 	fish.disable()
 	fish.get_parent().remove_child(fish)
@@ -25,9 +25,8 @@ func stop_fish(fish: Fish):
 func catch_fish(body):
 	if not is_active or body in fished or fished.size() >= max_fish:
 		return
-	is_active = false
 	fished.append(body)
-	call_deferred('stop_fish', body)
+	call_deferred('_stop_fish', body)
 	if not fishing:
 		$Timer.start(fishing_time)
 		fishing = true

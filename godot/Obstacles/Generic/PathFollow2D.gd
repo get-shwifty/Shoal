@@ -1,11 +1,13 @@
 extends PathFollow2D
 export(int) var SPEED = 50
-var temp_speed = SPEED
+var temp_speed
 
 func _ready():
-	SPEED = 0
 	var timer = get_parent().get_node('Timer')
-	timer.start()
+	if timer.wait_time > 0.5:
+		temp_speed = SPEED
+		SPEED = 0
+		timer.start()
 		
 func _physics_process(delta):
 	offset += SPEED * delta
@@ -14,5 +16,4 @@ func _physics_process(delta):
 
 
 func _on_Timer_timeout():
-	print("TIME TO SPEED UP")
 	SPEED = temp_speed

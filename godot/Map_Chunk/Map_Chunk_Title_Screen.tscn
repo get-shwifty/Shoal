@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Map_Chunk/Tile_Set.tres" type="TileSet" id=1]
 [ext_resource path="res://Obstacles/Big_Fish_Shoal.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Obstacles/Generic/PathNoLoop.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Assets/GUI/Arrow down.png" type="Texture" id=16]
 [ext_resource path="res://Assets/GUI/Arrow up.png" type="Texture" id=17]
+[ext_resource path="res://Obstacles/MovingBird.tscn" type="PackedScene" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -170,12 +171,24 @@ position = Vector2( 259.697, 304.372 )
 [node name="GroupTree4" parent="." instance=ExtResource( 12 )]
 position = Vector2( 252, 459 )
 
+[node name="MovingBird" parent="." instance=ExtResource( 18 )]
+position = Vector2( 196.671, 159.57 )
+rotation = -1.54903
+
+[node name="Timer" parent="MovingBird/PathNoLoop" index="1"]
+wait_time = 3.0
+
+[node name="MovingBird2" parent="." instance=ExtResource( 18 )]
+position = Vector2( 369.896, 461.031 )
+rotation = -0.000192977
+
 [node name="PathNoLoop" parent="." instance=ExtResource( 15 )]
 position = Vector2( 194, -18 )
 curve = SubResource( 3 )
 
 [node name="PathFollow2D" parent="PathNoLoop" index="0"]
 position = Vector2( 0, -112 )
+rotation = 1.5708
 SPEED = 30
 
 [node name="Predator" parent="PathNoLoop/PathFollow2D" index="0" instance=ExtResource( 14 )]
@@ -183,4 +196,12 @@ position = Vector2( 2, 0 )
 rotation = 1.5708
 fade_in = true
 
+[node name="Timer" parent="PathNoLoop" index="1"]
+wait_time = 0.4
+
+[editable path="MovingBird"]
+[editable path="MovingBird/PathNoLoop"]
+[editable path="MovingBird2"]
+[editable path="MovingBird2/PathNoLoop"]
+[editable path="MovingBird2/PathNoLoop/PathFollow2D/Bird"]
 [editable path="PathNoLoop"]
