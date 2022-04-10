@@ -7,6 +7,7 @@ var last_chunk
 
 export var starting_chunks = [
 	preload("res://Map_Chunk/Map_Chunk_Title_Screen.tscn"),
+	preload("res://Map_Chunk/Map_Chunk_Boss_1.tscn"),
 	preload("res://Map_Chunk/Map_Chunk_9.tscn"),
 	preload("res://Map_Chunk/Map_Chunk_1.tscn")
 ]

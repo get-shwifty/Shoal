@@ -63,9 +63,6 @@ rotation = 0.0137376
 [node name="Predator" parent="PathLoop/PathFollow2D" index="0" instance=ExtResource( 1 )]
 rotation = 1.5708
 
-[node name="AnimatedSprite" parent="PathLoop/PathFollow2D/Predator" index="0"]
-frame = 6
-
 [node name="FishingRode" parent="." instance=ExtResource( 5 )]
 position = Vector2( 241, 227 )
 
@@ -153,10 +150,11 @@ curve = SubResource( 2 )
 
 [node name="PathFollow2D" parent="PathLoop2" index="0"]
 position = Vector2( -74.559, -43 )
-rotation = -1.53176
+rotation = -1.53177
 
 [node name="Predator" parent="PathLoop2/PathFollow2D" index="0" instance=ExtResource( 1 )]
 rotation = 1.5708
+boss = true
 
 [node name="PathLoop3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 224.807, 215.823 )
@@ -169,6 +167,7 @@ rotation = 1.58139
 
 [node name="Predator" parent="PathLoop3/PathFollow2D" index="0" instance=ExtResource( 1 )]
 rotation = 1.5708
+boss = true
 
 [node name="PathNoLoop" parent="." instance=ExtResource( 14 )]
 position = Vector2( 160, 366 )

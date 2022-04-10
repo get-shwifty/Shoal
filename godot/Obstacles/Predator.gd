@@ -1,7 +1,8 @@
 extends Node2D
 export var fade_in = false
 export var fade_delay = 3
-
+export var boss = false
+var splash = preload('res://Obstacles/Generic/Splash.tscn')
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -12,6 +13,8 @@ func _ready():
 	if fade_in:
 		$Tween.interpolate_property($AnimatedSprite, "modulate", Color(1,1,1,0), Color(1,1,1,1),fade_delay, Tween.TRANS_LINEAR, Tween.EASE_IN, 2)
 		$Tween.start()
+	if boss:
+		$FishCatcher.one_shot = false
 		
 
 
@@ -25,14 +28,13 @@ func _on_Area2D_body_entered(body):
 
 
 func _on_FishCatcher_fished(_fished):
-	var animation = $Splash
-	var old_pos = animation.global_position
-	remove_child(animation)
+	var animation = splash.instance()
 	get_parent().get_parent().add_child(animation)
-	animation.global_position = old_pos
+	animation.global_position = $PositionSplash.global_position
 	animation.show()
 	animation.play("Splash")
 	$AudioStreamPlayer.play()
-	$Tween.interpolate_property($AnimatedSprite, "modulate", Color(1,1,1,1), 
-	Color(1,1,1,0),1, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	$Tween.start()
+	if not boss:
+		$Tween.interpolate_property($AnimatedSprite, "modulate", Color(1,1,1,1), 
+		Color(1,1,1,0),1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		$Tween.start()

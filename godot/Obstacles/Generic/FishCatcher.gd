@@ -9,6 +9,7 @@ var is_active = true
 var fishing = false
 var fished = []
 export(float) var fishing_time = 1
+export var one_shot = true
 export var max_fish = 3
 
 # Called when the node enters the scene tree for the first time.
@@ -38,3 +39,11 @@ func _on_Timer_timeout():
 			fish.queue_free()
 	is_active = false
 	emit_signal("fished", fished)
+	if not one_shot:
+		$CanFishAgain.start()
+
+
+func _on_CanFishAgain_timeout():
+	fished = []
+	is_active = true
+	fishing = false

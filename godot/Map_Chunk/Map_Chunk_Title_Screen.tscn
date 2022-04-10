@@ -171,16 +171,20 @@ position = Vector2( 259.697, 304.372 )
 [node name="GroupTree4" parent="." instance=ExtResource( 12 )]
 position = Vector2( 252, 459 )
 
-[node name="MovingBird" parent="." instance=ExtResource( 18 )]
-position = Vector2( 196.671, 159.57 )
-rotation = -1.54903
-
-[node name="Timer" parent="MovingBird/PathNoLoop" index="1"]
-wait_time = 3.0
-
 [node name="MovingBird2" parent="." instance=ExtResource( 18 )]
-position = Vector2( 369.896, 461.031 )
-rotation = -0.000192977
+position = Vector2( 258.057, 280 )
+rotation = -0.959931
+
+[node name="Timer" parent="MovingBird2/PathNoLoop" index="1"]
+wait_time = 1.0
+
+[node name="MovingBird3" parent="." instance=ExtResource( 18 )]
+position = Vector2( 125.64, 280 )
+rotation = 0.959931
+scale = Vector2( -1, -1 )
+
+[node name="Timer" parent="MovingBird3/PathNoLoop" index="1"]
+wait_time = 1.0
 
 [node name="PathNoLoop" parent="." instance=ExtResource( 15 )]
 position = Vector2( 194, -18 )
@@ -199,9 +203,10 @@ fade_in = true
 [node name="Timer" parent="PathNoLoop" index="1"]
 wait_time = 0.4
 
-[editable path="MovingBird"]
-[editable path="MovingBird/PathNoLoop"]
 [editable path="MovingBird2"]
 [editable path="MovingBird2/PathNoLoop"]
 [editable path="MovingBird2/PathNoLoop/PathFollow2D/Bird"]
+[editable path="MovingBird3"]
+[editable path="MovingBird3/PathNoLoop"]
+[editable path="MovingBird3/PathNoLoop/PathFollow2D/Bird"]
 [editable path="PathNoLoop"]
